@@ -279,6 +279,8 @@ def main() -> int:
         for path in root.rglob("*")
         if path.is_file()
         and path.name not in {"ARTIFACT_MANIFEST.json", "SHA256SUMS.txt"}
+        and "__pycache__" not in path.parts
+        and path.suffix.lower() != ".pyc"
     }
     if declared != actual_payload:
         raise ValueError(
