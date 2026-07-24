@@ -1,7 +1,7 @@
 {
   "schema_version": "0.20.0",
   "status": "PUBLIC_RELEASE_V2_READY",
-  "built_at_utc": "2026-07-24T08:57:06.747Z",
+  "built_at_utc": "2026-07-24T09:03:54.063Z",
   "dataset_version": "SecRegBench v0.20",
   "release_revision": "v0.20-r10",
   "source_complete_corpus_sha256": "a459ea29ab434679e6c59a65704318376e2a1ca548cf0d43e89d4df791cd5bdc",
@@ -324,8 +324,8 @@
     },
     {
       "path": "scores/corrected/family_diagnostics_corrected.tex",
-      "bytes": 842,
-      "sha256": "839e210c47aaf2270186277f2d125abecca2c473e310bffb1153753ea6860380"
+      "bytes": 824,
+      "sha256": "59e9485e7c643d14faaf2231cff3e5aff9c3070e651a4194db0769fc8a85028d"
     },
     {
       "path": "scores/corrected/REVIEW_CORRECTION_DIAGNOSTICS_V014.json",
