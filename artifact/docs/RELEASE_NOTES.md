@@ -1,9 +1,11 @@
-# SecRegBench public release notes v0.16-r7
+# SecRegBench public release notes v0.17-r1
 
 Status: `PUBLIC_RELEASE_V1_READY`
 
 This package is a public projection of the frozen author-side v0.14 artifact.
-It changes distribution metadata only; no model was retrained or rerun.
+The v0.17-r1 update adds a public regulatory-record category audit and its
+rebuild script. No scenario, split, label, model prediction, or score changed,
+and no model was retrained or rerun.
 
 ## Integrity
 
@@ -33,6 +35,8 @@ It changes distribution metadata only; no model was retrained or rerun.
   component assignment, and split;
 - parsed first-generation events and scored predictions;
 - graph/split mappings, aggregate reports, audits, code, tests, and licenses;
+- 1,833 official supervisory or punishment record references with fixed
+  retrieval/category evidence and no copied decision text;
 - aggregate, honest disclosure of Qwen and DeepSeek participation.
 
 The public artifact is intentionally suitable for result verification rather

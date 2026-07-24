@@ -16,6 +16,9 @@ This public package contains:
 - two sanitized 8,000-event model ledgers and scored predictions;
 - aggregate construction, repair, scoring, privacy, overlap, and diversity
   reports;
+- a fixed external audit of 1,833 official supervisory or punishment records,
+  stored as titles, URLs, dates, hashes, and deterministic category evidence
+  without copied decision text;
 - selected scoring/audit code, tests, documentation, and a self-contained
   verifier.
 
@@ -65,7 +68,9 @@ not distributed. See `docs/GENERATION_AND_LABEL_DISCLOSURE.md`.
 - `events/`: parsed event ledgers containing only job ID, parsed action,
   parse status, generation number, error status, and token counts
 - `scores/`: scored rows, reports, baseline, and corrected diagnostics
-- `audits/`: quality, privacy, overlap, projection-equivalence, and statistics
+- `audits/`: quality, privacy, overlap, projection-equivalence, statistics,
+  and the external public regulatory-record category audit; run its rebuild
+  script from the repository root
 - `provenance/`: aggregate generation and repair counts only
 - `code/`: selected analysis/scoring code, tests, and verifier
 - `docs/`: data card, governance, practitioner scope, licenses, and disclosure
