@@ -1,0 +1,38 @@
+{
+  "schema_version": "0.2.0",
+  "records_sha256": "e0fd08d7364e0d8089d50550642e144d71a71d66bdff7d68361218797e83d871",
+  "mapping_sha256": "f73d72b6f34cc397d02b88b07788d46ce055e5419ffe227c8f31dbb4a4c4571b",
+  "records": 10000,
+  "components": 214,
+  "minimum_component_size": 19,
+  "median_component_size": 20.0,
+  "maximum_component_size": 300,
+  "maximum_component_share": 0.03,
+  "cross_split_components": [],
+  "relation_fields": [
+    "component_id",
+    "family_id",
+    "pair_id",
+    "conversation_id",
+    "provenance.template_lineage_id",
+    "provenance.near_duplicate_cluster_id",
+    "provenance.authoring_block_id",
+    "provenance.official_source_page_id"
+  ],
+  "parent_relation": "provenance.parent_ids",
+  "derived_edges_sha256": "56ac12092223de593319f9881da61c2e1c1f3134e9e9bb06625f7fc7497d58a8",
+  "edge_counts": {
+    "component_id": 9500,
+    "conversation_id": 0,
+    "derived:char_ngram": 315,
+    "derived:exact_semantic_signature": 5763,
+    "derived:token_jaccard": 259,
+    "family_id": 4250,
+    "pair_id": 0,
+    "provenance.authoring_block_id": 0,
+    "provenance.near_duplicate_cluster_id": 0,
+    "provenance.official_source_page_id": 0,
+    "provenance.parent_ids": 0,
+    "provenance.template_lineage_id": 0
+  }
+}

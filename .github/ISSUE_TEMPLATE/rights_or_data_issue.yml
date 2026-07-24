@@ -1,0 +1,46 @@
+name: Rights or data issue
+description: Report a source, licensing, privacy, attribution, or benchmark-data concern
+title: "[Rights/Data] "
+labels:
+  - data-review
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not include passwords, API keys, private customer information, or
+        other secrets. Use private vulnerability reporting for sensitive data.
+  - type: input
+    id: release
+    attributes:
+      label: Release version
+      placeholder: "0.16-r7"
+    validations:
+      required: true
+  - type: input
+    id: file
+    attributes:
+      label: File, scenario, family, rule, or source ID
+      placeholder: "artifact/data/... or SRB27-..."
+    validations:
+      required: true
+  - type: textarea
+    id: concern
+    attributes:
+      label: Concern
+      description: Describe the rights, privacy, attribution, or data-quality issue.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Supporting source or evidence
+      description: Provide an official URL or other non-sensitive evidence.
+    validations:
+      required: true
+  - type: textarea
+    id: remedy
+    attributes:
+      label: Requested remedy
+      description: Correction, attribution, restriction, removal, or other remedy.
+    validations:
+      required: false

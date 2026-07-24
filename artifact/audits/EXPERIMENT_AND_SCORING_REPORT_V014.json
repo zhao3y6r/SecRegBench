@@ -1,0 +1,993 @@
+{
+  "schema_version": "0.14.0",
+  "status": "PASS_N5_HASH_VERIFIED_INCREMENTAL_EVALUATION_AND_SCORING",
+  "archive": {
+    "bytes": 1869437,
+    "sha256": "ecd42fa3af5826668bb7cb4102071292eb8a90d2b2e349d9fdac211cb73f30ae",
+    "internal_file_hashes_verified_locally": true
+  },
+  "server_completion": {
+    "schema_version": "0.14.0",
+    "status": "PASS_BOTH_MINIMAL_INCREMENTAL_RUNS_AND_PRIMARY_SERVICE_RESTORED",
+    "primary_jobs": 188,
+    "secondary_jobs": 2240,
+    "primary_api_errors": 0,
+    "secondary_api_errors": 0,
+    "paper_or_manuscript_files_on_server": 0,
+    "protected_supersonic_modified": false
+  },
+  "heldout_scenarios": 2000,
+  "methods_per_scenario": 4,
+  "predictions_per_model": 8000,
+  "incremental_predictions": 2428,
+  "incremental_usage_total_tokens": 1110144,
+  "models": {
+    "primary_qwen35": {
+      "physical_checkpoint": "Qwen3.5-35B-A3B-GPTQ-Int4",
+      "reuse_and_incremental": {
+        "physical_checkpoint": "Qwen3.5-35B-A3B-GPTQ-Int4",
+        "jobs": 8000,
+        "reused_jobs": 7812,
+        "incremental_jobs": 188,
+        "api_errors": 0,
+        "invalid_parses": 0,
+        "action_counts": {
+          "ANSWER": 2474,
+          "CLARIFY": 2868,
+          "ESCALATE": 1717,
+          "REFUSE": 941
+        },
+        "old_event_sha256": "87ef26c879543e5504dd3788775eae7e674ad33e7c1e035a0eeee7b296e40d07",
+        "new_event_sha256": "255e3f1d07a2121222849875e9341facebf6a04dcf294d2eefedd7e57537feef",
+        "output_sha256": "5c71d3e58b78c12237694a4f83bcdc23f8d29cadb24af4d4a6f1ade81e42ce9a"
+      },
+      "incremental_run": {
+        "status": "PASS_COMPLETE",
+        "jobs": 188,
+        "events": 188,
+        "api_errors": 0,
+        "usage_total_tokens": 85067,
+        "validation_status": "PASS"
+      },
+      "heldout": {
+        "dialogue_only": {
+          "n": 2000,
+          "accuracy": 0.4045,
+          "macro_f1": 0.3415690843926095,
+          "invalid_rate": 0.0,
+          "unsafe_fulfilment_rate": 0.23825503355704697,
+          "severe_unsafe_fulfilment_count": 213,
+          "service_denial_rate_on_answer": 0.3614595210946408,
+          "non_answer_rate_on_answer": 0.45381984036488027,
+          "per_action": {
+            "ANSWER": {
+              "support": 877,
+              "precision": 0.6902017291066282,
+              "recall": 0.5461801596351197,
+              "f1": 0.6098026734563972
+            },
+            "CLARIFY": {
+              "support": 229,
+              "precision": 0.18412698412698414,
+              "recall": 0.25327510917030566,
+              "f1": 0.21323529411764705
+            },
+            "REFUSE": {
+              "support": 646,
+              "precision": 0.37453183520599254,
+              "recall": 0.30959752321981426,
+              "f1": 0.33898305084745767
+            },
+            "ESCALATE": {
+              "support": 248,
+              "precision": 0.1575492341356674,
+              "recall": 0.2903225806451613,
+              "f1": 0.2042553191489362
+            }
+          },
+          "confusion": {
+            "ANSWER": {
+              "ANSWER": 479,
+              "CLARIFY": 81,
+              "REFUSE": 159,
+              "ESCALATE": 158,
+              "INVALID": 0
+            },
+            "CLARIFY": {
+              "ANSWER": 2,
+              "CLARIFY": 58,
+              "REFUSE": 99,
+              "ESCALATE": 70,
+              "INVALID": 0
+            },
+            "REFUSE": {
+              "ANSWER": 176,
+              "CLARIFY": 113,
+              "REFUSE": 200,
+              "ESCALATE": 157,
+              "INVALID": 0
+            },
+            "ESCALATE": {
+              "ANSWER": 37,
+              "CLARIFY": 63,
+              "REFUSE": 76,
+              "ESCALATE": 72,
+              "INVALID": 0
+            }
+          },
+          "component_bootstrap_ci95": {
+            "accuracy": {
+              "low": 0.2307207401032702,
+              "high": 0.570857172968647
+            },
+            "macro_f1": {
+              "low": 0.21084130452972089,
+              "high": 0.40133112784988484
+            },
+            "unsafe_fulfilment_rate": {
+              "low": 0.10628628201763804,
+              "high": 0.40399553969165314
+            },
+            "service_denial_rate_on_answer": {
+              "low": 0.1887957420618222,
+              "high": 0.7329059334826644
+            },
+            "non_answer_rate_on_answer": {
+              "low": 0.23858073553842243,
+              "high": 0.9139152511845714
+            }
+          }
+        },
+        "state_only": {
+          "n": 2000,
+          "accuracy": 0.43,
+          "macro_f1": 0.4018328531655124,
+          "invalid_rate": 0.0,
+          "unsafe_fulfilment_rate": 0.116331096196868,
+          "severe_unsafe_fulfilment_count": 104,
+          "service_denial_rate_on_answer": 0.3956670467502851,
+          "non_answer_rate_on_answer": 0.42531356898517675,
+          "per_action": {
+            "ANSWER": {
+              "support": 877,
+              "precision": 0.8289473684210527,
+              "recall": 0.5746864310148233,
+              "f1": 0.6787878787878788
+            },
+            "CLARIFY": {
+              "support": 229,
+              "precision": 0.3938223938223938,
+              "recall": 0.44541484716157204,
+              "f1": 0.41803278688524587
+            },
+            "REFUSE": {
+              "support": 646,
+              "precision": 0.6534090909090909,
+              "recall": 0.1780185758513932,
+              "f1": 0.2798053527980536
+            },
+            "ESCALATE": {
+              "support": 248,
+              "precision": 0.1452455590386625,
+              "recall": 0.5604838709677419,
+              "f1": 0.2307053941908714
+            }
+          },
+          "confusion": {
+            "ANSWER": {
+              "ANSWER": 504,
+              "CLARIFY": 26,
+              "REFUSE": 38,
+              "ESCALATE": 309,
+              "INVALID": 0
+            },
+            "CLARIFY": {
+              "ANSWER": 0,
+              "CLARIFY": 102,
+              "REFUSE": 0,
+              "ESCALATE": 127,
+              "INVALID": 0
+            },
+            "REFUSE": {
+              "ANSWER": 92,
+              "CLARIFY": 57,
+              "REFUSE": 115,
+              "ESCALATE": 382,
+              "INVALID": 0
+            },
+            "ESCALATE": {
+              "ANSWER": 12,
+              "CLARIFY": 74,
+              "REFUSE": 23,
+              "ESCALATE": 139,
+              "INVALID": 0
+            }
+          },
+          "component_bootstrap_ci95": {
+            "accuracy": {
+              "low": 0.2599275201288596,
+              "high": 0.587693353458579
+            },
+            "macro_f1": {
+              "low": 0.27775824636225654,
+              "high": 0.4532849051222461
+            },
+            "unsafe_fulfilment_rate": {
+              "low": 0.026035300316122233,
+              "high": 0.25863916998112624
+            },
+            "service_denial_rate_on_answer": {
+              "low": 0.21101865718699753,
+              "high": 0.7969773479574148
+            },
+            "non_answer_rate_on_answer": {
+              "low": 0.22632833049667336,
+              "high": 0.8583067517278042
+            }
+          }
+        },
+        "oracle_evidence": {
+          "n": 2000,
+          "accuracy": 0.3885,
+          "macro_f1": 0.32286492282892604,
+          "invalid_rate": 0.0,
+          "unsafe_fulfilment_rate": 0.13982102908277405,
+          "severe_unsafe_fulfilment_count": 125,
+          "service_denial_rate_on_answer": 0.05815279361459521,
+          "non_answer_rate_on_answer": 0.4652223489167617,
+          "per_action": {
+            "ANSWER": {
+              "support": 877,
+              "precision": 0.7895622895622896,
+              "recall": 0.5347776510832383,
+              "f1": 0.637661454792658
+            },
+            "CLARIFY": {
+              "support": 229,
+              "precision": 0.1792376317923763,
+              "recall": 0.9650655021834061,
+              "f1": 0.3023255813953488
+            },
+            "REFUSE": {
+              "support": 646,
+              "precision": 0.9038461538461539,
+              "recall": 0.07275541795665634,
+              "f1": 0.13467048710601717
+            },
+            "ESCALATE": {
+              "support": 248,
+              "precision": 0.3305785123966942,
+              "recall": 0.16129032258064516,
+              "f1": 0.21680216802168023
+            }
+          },
+          "confusion": {
+            "ANSWER": {
+              "ANSWER": 469,
+              "CLARIFY": 357,
+              "REFUSE": 4,
+              "ESCALATE": 47,
+              "INVALID": 0
+            },
+            "CLARIFY": {
+              "ANSWER": 0,
+              "CLARIFY": 221,
+              "REFUSE": 0,
+              "ESCALATE": 8,
+              "INVALID": 0
+            },
+            "REFUSE": {
+              "ANSWER": 110,
+              "CLARIFY": 463,
+              "REFUSE": 47,
+              "ESCALATE": 26,
+              "INVALID": 0
+            },
+            "ESCALATE": {
+              "ANSWER": 15,
+              "CLARIFY": 192,
+              "REFUSE": 1,
+              "ESCALATE": 40,
+              "INVALID": 0
+            }
+          },
+          "component_bootstrap_ci95": {
+            "accuracy": {
+              "low": 0.20889261381766405,
+              "high": 0.5537955151439402
+            },
+            "macro_f1": {
+              "low": 0.18463057635765412,
+              "high": 0.3808981810230354
+            },
+            "unsafe_fulfilment_rate": {
+              "low": 0.027740327227005777,
+              "high": 0.3087957060214699
+            },
+            "service_denial_rate_on_answer": {
+              "low": 0.030701295603024297,
+              "high": 0.11980096716075966
+            },
+            "non_answer_rate_on_answer": {
+              "low": 0.25523012552301255,
+              "high": 0.9246861924686193
+            }
+          }
+        },
+        "state_oracle_evidence": {
+          "n": 2000,
+          "accuracy": 0.471,
+          "macro_f1": 0.4176949790399802,
+          "invalid_rate": 0.0,
+          "unsafe_fulfilment_rate": 0.0894854586129754,
+          "severe_unsafe_fulfilment_count": 80,
+          "service_denial_rate_on_answer": 0.06841505131128849,
+          "non_answer_rate_on_answer": 0.4321550741163056,
+          "per_action": {
+            "ANSWER": {
+              "support": 877,
+              "precision": 0.8615916955017301,
+              "recall": 0.5678449258836944,
+              "f1": 0.6845360824742268
+            },
+            "CLARIFY": {
+              "support": 229,
+              "precision": 0.21489161168708765,
+              "recall": 0.9956331877729258,
+              "f1": 0.35348837209302325
+            },
+            "REFUSE": {
+              "support": 646,
+              "precision": 0.9329608938547486,
+              "recall": 0.2585139318885449,
+              "f1": 0.40484848484848485
+            },
+            "ESCALATE": {
+              "support": 248,
+              "precision": 0.2692307692307692,
+              "recall": 0.1975806451612903,
+              "f1": 0.22790697674418603
+            }
+          },
+          "confusion": {
+            "ANSWER": {
+              "ANSWER": 498,
+              "CLARIFY": 319,
+              "REFUSE": 7,
+              "ESCALATE": 53,
+              "INVALID": 0
+            },
+            "CLARIFY": {
+              "ANSWER": 0,
+              "CLARIFY": 228,
+              "REFUSE": 0,
+              "ESCALATE": 1,
+              "INVALID": 0
+            },
+            "REFUSE": {
+              "ANSWER": 77,
+              "CLARIFY": 323,
+              "REFUSE": 167,
+              "ESCALATE": 79,
+              "INVALID": 0
+            },
+            "ESCALATE": {
+              "ANSWER": 3,
+              "CLARIFY": 191,
+              "REFUSE": 5,
+              "ESCALATE": 49,
+              "INVALID": 0
+            }
+          },
+          "component_bootstrap_ci95": {
+            "accuracy": {
+              "low": 0.313661693265067,
+              "high": 0.6140864390269303
+            },
+            "macro_f1": {
+              "low": 0.28885123916234035,
+              "high": 0.47263564820198406
+            },
+            "unsafe_fulfilment_rate": {
+              "low": 0.0,
+              "high": 0.23741007194244604
+            },
+            "service_denial_rate_on_answer": {
+              "low": 0.030146093519408817,
+              "high": 0.15815312424801473
+            },
+            "non_answer_rate_on_answer": {
+              "low": 0.23140331803525413,
+              "high": 0.8755666666666665
+            }
+          }
+        }
+      },
+      "dialogue_only_comparisons": {
+        "dialogue_only__vs__state_only": {
+          "components": 59,
+          "difference_is_right_minus_left": true,
+          "metrics": {
+            "accuracy": {
+              "difference": 0.025499999999999967,
+              "ci95_low": -0.014717894333066256,
+              "ci95_high": 0.07014042113407512
+            },
+            "macro_f1": {
+              "difference": 0.060263768772902904,
+              "ci95_low": 0.025886518087764477,
+              "ci95_high": 0.09718621969108819
+            },
+            "unsafe_fulfilment_rate": {
+              "difference": -0.12192393736017897,
+              "ci95_low": -0.17037096201632942,
+              "ci95_high": -0.07032297660145764
+            },
+            "service_denial_rate_on_answer": {
+              "difference": 0.03420752565564428,
+              "ci95_low": 0.01367715521767229,
+              "ci95_high": 0.07990910016805013
+            },
+            "non_answer_rate_on_answer": {
+              "difference": -0.02850627137970352,
+              "ci95_low": -0.06867034695147917,
+              "ci95_high": -0.010921092299046066
+            }
+          }
+        },
+        "dialogue_only__vs__oracle_evidence": {
+          "components": 59,
+          "difference_is_right_minus_left": true,
+          "metrics": {
+            "accuracy": {
+              "difference": -0.016000000000000014,
+              "ci95_low": -0.05706192260655738,
+              "ci95_high": 0.026754554946591055
+            },
+            "macro_f1": {
+              "difference": -0.018704161563683486,
+              "ci95_low": -0.05376512239175178,
+              "ci95_high": 0.0164638410799426
+            },
+            "unsafe_fulfilment_rate": {
+              "difference": -0.09843400447427292,
+              "ci95_low": -0.1316288845083488,
+              "ci95_high": -0.06868030186502598
+            },
+            "service_denial_rate_on_answer": {
+              "difference": -0.3033067274800456,
+              "ci95_low": -0.6373878172065195,
+              "ci95_high": -0.14790565015992824
+            },
+            "non_answer_rate_on_answer": {
+              "difference": 0.011402508551881407,
+              "ci95_low": 0.0038535027120881974,
+              "ci95_high": 0.016645326504481472
+            }
+          }
+        },
+        "dialogue_only__vs__state_oracle_evidence": {
+          "components": 59,
+          "difference_is_right_minus_left": true,
+          "metrics": {
+            "accuracy": {
+              "difference": 0.06649999999999995,
+              "ci95_low": 0.021924386981607532,
+              "ci95_high": 0.12177169565167731
+            },
+            "macro_f1": {
+              "difference": 0.07612589464737068,
+              "ci95_low": 0.027157833182889137,
+              "ci95_high": 0.12438248544979512
+            },
+            "unsafe_fulfilment_rate": {
+              "difference": -0.14876957494407156,
+              "ci95_low": -0.1950997488351267,
+              "ci95_high": -0.09921538442341947
+            },
+            "service_denial_rate_on_answer": {
+              "difference": -0.2930444697833523,
+              "ci95_low": -0.6041666666666667,
+              "ci95_high": -0.1542948123182893
+            },
+            "non_answer_rate_on_answer": {
+              "difference": -0.021664766248574663,
+              "ci95_low": -0.05787055644873167,
+              "ci95_high": -0.0052514603402336445
+            }
+          }
+        }
+      }
+    },
+    "secondary_qwen25": {
+      "physical_checkpoint": "Qwen2.5-7B-Instruct",
+      "reuse_and_incremental": {
+        "physical_checkpoint": "Qwen2.5-7B-Instruct",
+        "jobs": 8000,
+        "reused_jobs": 5760,
+        "incremental_jobs": 2240,
+        "api_errors": 0,
+        "invalid_parses": 0,
+        "action_counts": {
+          "ANSWER": 1836,
+          "CLARIFY": 5773,
+          "ESCALATE": 151,
+          "REFUSE": 240
+        },
+        "old_event_sha256": "b0696f95eaee394c10d191b265fef92971999e84f87d0896d1c8274612a95c2c",
+        "new_event_sha256": "ed42196d30116a3753793d5b5e40359a1e883499cb7a3b322a6a860633edab00",
+        "output_sha256": "e2d9235db728ee4e697d1e7081b6050ebdd92f7b4f49315e31beb2f58bc6bccf"
+      },
+      "incremental_run": {
+        "status": "PASS_COMPLETE",
+        "jobs": 2240,
+        "events": 2240,
+        "api_errors": 0,
+        "usage_total_tokens": 1025077,
+        "validation_status": "PASS"
+      },
+      "heldout": {
+        "dialogue_only": {
+          "n": 2000,
+          "accuracy": 0.3395,
+          "macro_f1": 0.2380988335591386,
+          "invalid_rate": 0.0,
+          "unsafe_fulfilment_rate": 0.005592841163310962,
+          "severe_unsafe_fulfilment_count": 5,
+          "service_denial_rate_on_answer": 0.004561003420752566,
+          "non_answer_rate_on_answer": 0.4868871151653364,
+          "per_action": {
+            "ANSWER": {
+              "support": 877,
+              "precision": 0.9846827133479212,
+              "recall": 0.5131128848346637,
+              "f1": 0.6746626686656673
+            },
+            "CLARIFY": {
+              "support": 229,
+              "precision": 0.1471550032701112,
+              "recall": 0.982532751091703,
+              "f1": 0.2559726962457338
+            },
+            "REFUSE": {
+              "support": 646,
+              "precision": 0.3333333333333333,
+              "recall": 0.0030959752321981426,
+              "f1": 0.006134969325153374
+            },
+            "ESCALATE": {
+              "support": 248,
+              "precision": 0.25,
+              "recall": 0.008064516129032258,
+              "f1": 0.015625
+            }
+          },
+          "confusion": {
+            "ANSWER": {
+              "ANSWER": 450,
+              "CLARIFY": 423,
+              "REFUSE": 1,
+              "ESCALATE": 3,
+              "INVALID": 0
+            },
+            "CLARIFY": {
+              "ANSWER": 2,
+              "CLARIFY": 225,
+              "REFUSE": 1,
+              "ESCALATE": 1,
+              "INVALID": 0
+            },
+            "REFUSE": {
+              "ANSWER": 4,
+              "CLARIFY": 638,
+              "REFUSE": 2,
+              "ESCALATE": 2,
+              "INVALID": 0
+            },
+            "ESCALATE": {
+              "ANSWER": 1,
+              "CLARIFY": 243,
+              "REFUSE": 2,
+              "ESCALATE": 2,
+              "INVALID": 0
+            }
+          },
+          "component_bootstrap_ci95": {
+            "accuracy": {
+              "low": 0.16486022105915704,
+              "high": 0.5080973361609601
+            },
+            "macro_f1": {
+              "low": 0.1113947636568217,
+              "high": 0.27751336909516044
+            },
+            "unsafe_fulfilment_rate": {
+              "low": 0.0010459705103903704,
+              "high": 0.012180267965895249
+            },
+            "service_denial_rate_on_answer": {
+              "low": 0.0011506490113068909,
+              "high": 0.010239082694567221
+            },
+            "non_answer_rate_on_answer": {
+              "low": 0.28622360720722134,
+              "high": 0.9098799836696139
+            }
+          }
+        },
+        "state_only": {
+          "n": 2000,
+          "accuracy": 0.3625,
+          "macro_f1": 0.2732397564842624,
+          "invalid_rate": 0.0,
+          "unsafe_fulfilment_rate": 0.029082774049217,
+          "severe_unsafe_fulfilment_count": 26,
+          "service_denial_rate_on_answer": 0.043329532497149374,
+          "non_answer_rate_on_answer": 0.443557582668187,
+          "per_action": {
+            "ANSWER": {
+              "support": 877,
+              "precision": 0.9475728155339805,
+              "recall": 0.556442417331813,
+              "f1": 0.7011494252873562
+            },
+            "CLARIFY": {
+              "support": 229,
+              "precision": 0.15521064301552107,
+              "recall": 0.9170305676855895,
+              "f1": 0.26548672566371684
+            },
+            "REFUSE": {
+              "support": 646,
+              "precision": 0.5294117647058824,
+              "recall": 0.01393188854489164,
+              "f1": 0.027149321266968323
+            },
+            "ESCALATE": {
+              "support": 248,
+              "precision": 0.1565217391304348,
+              "recall": 0.07258064516129033,
+              "f1": 0.09917355371900827
+            }
+          },
+          "confusion": {
+            "ANSWER": {
+              "ANSWER": 488,
+              "CLARIFY": 351,
+              "REFUSE": 3,
+              "ESCALATE": 35,
+              "INVALID": 0
+            },
+            "CLARIFY": {
+              "ANSWER": 1,
+              "CLARIFY": 210,
+              "REFUSE": 3,
+              "ESCALATE": 15,
+              "INVALID": 0
+            },
+            "REFUSE": {
+              "ANSWER": 16,
+              "CLARIFY": 574,
+              "REFUSE": 9,
+              "ESCALATE": 47,
+              "INVALID": 0
+            },
+            "ESCALATE": {
+              "ANSWER": 10,
+              "CLARIFY": 218,
+              "REFUSE": 2,
+              "ESCALATE": 18,
+              "INVALID": 0
+            }
+          },
+          "component_bootstrap_ci95": {
+            "accuracy": {
+              "low": 0.17156069897528664,
+              "high": 0.538790755302433
+            },
+            "macro_f1": {
+              "low": 0.13912602467633342,
+              "high": 0.32071949090813984
+            },
+            "unsafe_fulfilment_rate": {
+              "low": 0.014977948192208528,
+              "high": 0.04575181635154061
+            },
+            "service_denial_rate_on_answer": {
+              "low": 0.022818423499002358,
+              "high": 0.09055388509128663
+            },
+            "non_answer_rate_on_answer": {
+              "low": 0.237257250863586,
+              "high": 0.8923214285714284
+            }
+          }
+        },
+        "oracle_evidence": {
+          "n": 2000,
+          "accuracy": 0.3575,
+          "macro_f1": 0.29154600298559485,
+          "invalid_rate": 0.0,
+          "unsafe_fulfilment_rate": 0.010067114093959731,
+          "severe_unsafe_fulfilment_count": 9,
+          "service_denial_rate_on_answer": 0.0,
+          "non_answer_rate_on_answer": 0.5689851767388826,
+          "per_action": {
+            "ANSWER": {
+              "support": 877,
+              "precision": 0.9767441860465116,
+              "recall": 0.43101482326111745,
+              "f1": 0.5981012658227848
+            },
+            "CLARIFY": {
+              "support": 229,
+              "precision": 0.15287049399198932,
+              "recall": 1.0,
+              "f1": 0.2651997683844817
+            },
+            "REFUSE": {
+              "support": 646,
+              "precision": 1.0,
+              "recall": 0.16253869969040247,
+              "f1": 0.27962716378162444
+            },
+            "ESCALATE": {
+              "support": 248,
+              "precision": 0.3,
+              "recall": 0.012096774193548387,
+              "f1": 0.023255813953488372
+            }
+          },
+          "confusion": {
+            "ANSWER": {
+              "ANSWER": 378,
+              "CLARIFY": 499,
+              "REFUSE": 0,
+              "ESCALATE": 0,
+              "INVALID": 0
+            },
+            "CLARIFY": {
+              "ANSWER": 0,
+              "CLARIFY": 229,
+              "REFUSE": 0,
+              "ESCALATE": 0,
+              "INVALID": 0
+            },
+            "REFUSE": {
+              "ANSWER": 9,
+              "CLARIFY": 525,
+              "REFUSE": 105,
+              "ESCALATE": 7,
+              "INVALID": 0
+            },
+            "ESCALATE": {
+              "ANSWER": 0,
+              "CLARIFY": 245,
+              "REFUSE": 0,
+              "ESCALATE": 3,
+              "INVALID": 0
+            }
+          },
+          "component_bootstrap_ci95": {
+            "accuracy": {
+              "low": 0.2027183987939985,
+              "high": 0.4858067127270848
+            },
+            "macro_f1": {
+              "low": 0.1391463455186192,
+              "high": 0.37171183387130663
+            },
+            "unsafe_fulfilment_rate": {
+              "low": 0.0,
+              "high": 0.025853376956816315
+            },
+            "service_denial_rate_on_answer": {
+              "low": 0.0,
+              "high": 0.0
+            },
+            "non_answer_rate_on_answer": {
+              "low": 0.39987873484759806,
+              "high": 0.9372384937238494
+            }
+          }
+        },
+        "state_oracle_evidence": {
+          "n": 2000,
+          "accuracy": 0.403,
+          "macro_f1": 0.32373604666912936,
+          "invalid_rate": 0.0,
+          "unsafe_fulfilment_rate": 0.01901565995525727,
+          "severe_unsafe_fulfilment_count": 17,
+          "service_denial_rate_on_answer": 0.0034207525655644243,
+          "non_answer_rate_on_answer": 0.475484606613455,
+          "per_action": {
+            "ANSWER": {
+              "support": 877,
+              "precision": 0.9643605870020965,
+              "recall": 0.5245153933865451,
+              "f1": 0.6794682422451995
+            },
+            "CLARIFY": {
+              "support": 229,
+              "precision": 0.16439339554917445,
+              "recall": 1.0,
+              "f1": 0.28236744759556104
+            },
+            "REFUSE": {
+              "support": 646,
+              "precision": 1.0,
+              "recall": 0.17337461300309598,
+              "f1": 0.2955145118733509
+            },
+            "ESCALATE": {
+              "support": 248,
+              "precision": 0.2777777777777778,
+              "recall": 0.020161290322580645,
+              "f1": 0.03759398496240601
+            }
+          },
+          "confusion": {
+            "ANSWER": {
+              "ANSWER": 460,
+              "CLARIFY": 414,
+              "REFUSE": 0,
+              "ESCALATE": 3,
+              "INVALID": 0
+            },
+            "CLARIFY": {
+              "ANSWER": 0,
+              "CLARIFY": 229,
+              "REFUSE": 0,
+              "ESCALATE": 0,
+              "INVALID": 0
+            },
+            "REFUSE": {
+              "ANSWER": 15,
+              "CLARIFY": 509,
+              "REFUSE": 112,
+              "ESCALATE": 10,
+              "INVALID": 0
+            },
+            "ESCALATE": {
+              "ANSWER": 2,
+              "CLARIFY": 241,
+              "REFUSE": 0,
+              "ESCALATE": 5,
+              "INVALID": 0
+            }
+          },
+          "component_bootstrap_ci95": {
+            "accuracy": {
+              "low": 0.21657891568243265,
+              "high": 0.5569244693999159
+            },
+            "macro_f1": {
+              "low": 0.16036131622312422,
+              "high": 0.4021404919594559
+            },
+            "unsafe_fulfilment_rate": {
+              "low": 0.004059471299135118,
+              "high": 0.03747534516765286
+            },
+            "service_denial_rate_on_answer": {
+              "low": 0.0,
+              "high": 0.010733933483370836
+            },
+            "non_answer_rate_on_answer": {
+              "low": 0.2755052506439469,
+              "high": 0.9200918464622102
+            }
+          }
+        }
+      },
+      "dialogue_only_comparisons": {
+        "dialogue_only__vs__state_only": {
+          "components": 59,
+          "difference_is_right_minus_left": true,
+          "metrics": {
+            "accuracy": {
+              "difference": 0.022999999999999965,
+              "ci95_low": 0.004297742691251194,
+              "ci95_high": 0.03893088647144256
+            },
+            "macro_f1": {
+              "difference": 0.0351409229251238,
+              "ci95_low": 0.021685958090663156,
+              "ci95_high": 0.04646327421052768
+            },
+            "unsafe_fulfilment_rate": {
+              "difference": 0.023489932885906038,
+              "ci95_low": 0.010882675691073705,
+              "ci95_high": 0.038946534565091256
+            },
+            "service_denial_rate_on_answer": {
+              "difference": 0.03876852907639681,
+              "ci95_low": 0.019354393156300127,
+              "ci95_high": 0.0833371985157699
+            },
+            "non_answer_rate_on_answer": {
+              "difference": -0.04332953249714938,
+              "ci95_low": -0.0639036809789216,
+              "ci95_high": -0.007333628077005244
+            }
+          }
+        },
+        "dialogue_only__vs__oracle_evidence": {
+          "components": 59,
+          "difference_is_right_minus_left": true,
+          "metrics": {
+            "accuracy": {
+              "difference": 0.01799999999999996,
+              "ci95_low": -0.05306596706660892,
+              "ci95_high": 0.13537754708136857
+            },
+            "macro_f1": {
+              "difference": 0.05344716942645625,
+              "ci95_low": -0.013131008131340693,
+              "ci95_high": 0.12690510800808838
+            },
+            "unsafe_fulfilment_rate": {
+              "difference": 0.004474272930648769,
+              "ci95_low": -0.00989038189533239,
+              "ci95_high": 0.021801018323242476
+            },
+            "service_denial_rate_on_answer": {
+              "difference": -0.004561003420752566,
+              "ci95_low": -0.010101010101010102,
+              "ci95_high": -0.001214956501784355
+            },
+            "non_answer_rate_on_answer": {
+              "difference": 0.08209806157354621,
+              "ci95_low": 0.023134763693889664,
+              "ci95_high": 0.1107815409551038
+            }
+          }
+        },
+        "dialogue_only__vs__state_oracle_evidence": {
+          "components": 59,
+          "difference_is_right_minus_left": true,
+          "metrics": {
+            "accuracy": {
+              "difference": 0.0635,
+              "ci95_low": 0.012869207850686135,
+              "ci95_high": 0.1583357743250127
+            },
+            "macro_f1": {
+              "difference": 0.08563721310999076,
+              "ci95_low": 0.020558123220612755,
+              "ci95_high": 0.15219291791928252
+            },
+            "unsafe_fulfilment_rate": {
+              "difference": 0.013422818791946307,
+              "ci95_low": -0.0013736263736263735,
+              "ci95_high": 0.032724052349092876
+            },
+            "service_denial_rate_on_answer": {
+              "difference": -0.0011402508551881414,
+              "ci95_low": -0.0068572408723352124,
+              "ci95_high": 0.006912442396313364
+            },
+            "non_answer_rate_on_answer": {
+              "difference": -0.011402508551881407,
+              "ci95_low": -0.03462068064546323,
+              "ci95_high": 0.014184397163120588
+            }
+          }
+        }
+      }
+    }
+  },
+  "bootstrap": {
+    "replicates": 10000,
+    "seed": 27072027,
+    "unit": "realized leakage component",
+    "heldout_components": 59
+  },
+  "interpretation_guard": "Do not treat raw v0.13-to-v0.14 metric differences as model drift: the component-safe held-out membership changed.",
+  "hashes": {
+    "materialization_report": "5f1472b6a6da4a7f7a8816f915f99c178127d8f7b83910c2c5c2662bcf09a25f",
+    "primary_scoring_report": "4681c38f9bf2a7d7275fe09bf979ea2663775c10cdf3f4fca5828874dd887079",
+    "secondary_scoring_report": "d3095e62ead5cd436c276920398c5ab23de5a4e993eb589afe564cb26c62cfbe",
+    "HELDOUT_MODEL_METRICS_V014.csv": "d5f623d21de452a346aa7f3989892ef388d59bac57705e9a98afb5842c1e067b"
+  }
+}

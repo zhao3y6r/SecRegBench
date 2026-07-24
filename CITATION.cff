@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use SecRegBench, please cite the paper and the exact release."
+title: "SecRegBench: Stateful Regulatory Action Evaluation for Securities Customer-Service Assistants"
+type: dataset
+version: "0.16-r7"
+date-released: 2026-07-24
+authors:
+  - family-names: "Zhao"
+    given-names: "Yan"
+    affiliation: "Zhejiang University"
+repository-code: "https://github.com/zhao3y6r/SecRegBench"
+license: "CC-BY-NC-4.0"
+keywords:
+  - regulatory compliance
+  - financial AI safety
+  - stateful dialogue
+  - counterfactual evaluation
+  - benchmark auditing
+

@@ -1,0 +1,30 @@
+{
+  "schema_version": "0.14.0",
+  "status": "PASS_NO_HIGH_RISK_IDENTIFIER_OR_CREDENTIAL_PATTERN",
+  "scope": "automatic_regex_scan_of_every_dialogue_turn_in_the_final_v014_corpus",
+  "corpus_rows": 10000,
+  "dialogue_turns": 16000,
+  "pattern_definitions": {
+    "mainland_mobile_number": "(?<!\\d)1[3-9]\\d{9}(?!\\d)",
+    "mainland_identity_number": "(?<!\\d)\\d{17}[\\dXx](?!\\d)",
+    "long_account_like_number": "(?<!\\d)\\d{12,19}(?!\\d)",
+    "email_address": "(?i)(?<![\\w.])[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}(?![\\w.])",
+    "ipv4_address": "(?<!\\d)(?:\\d{1,3}\\.){3}\\d{1,3}(?!\\d)",
+    "credential_assignment": "(?i)(?:password|passwd|api[_-]?key|access[_-]?token|secret[_-]?key)\\s*[:=]",
+    "explicit_chinese_identifier_disclosure": "(?:身份证(?:号|号码)?|手机(?:号|号码)?|银行卡号|账户号|账号)\\s*(?:是|为|[:：])"
+  },
+  "finding_events": 0,
+  "scenarios_flagged": 0,
+  "counts_by_kind": {},
+  "automatic_only": true,
+  "practitioner_review_is_separate": true,
+  "limitations": [
+    "Regex scanning cannot establish absence of all personal or sensitive information.",
+    "It does not infer whether an ordinary name or organization refers to a real person.",
+    "A pass is not legal, institutional, or human privacy approval."
+  ],
+  "hashes": {
+    "corpus": "a459ea29ab434679e6c59a65704318376e2a1ca548cf0d43e89d4df791cd5bdc",
+    "findings": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

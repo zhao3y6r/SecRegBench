@@ -1,0 +1,78 @@
+{
+  "schema_version": "0.14.0",
+  "status": "PASS_AMENDED_COMPONENT_SAFE_RESPLIT_BEFORE_V014_MODEL_RESCORING",
+  "seed": 27072027,
+  "scenarios": 10000,
+  "realized_components": 214,
+  "heldout_components": 59,
+  "development_components": 155,
+  "split_counts": {
+    "development": 8000,
+    "heldout": 2000
+  },
+  "heldout_suite_counts": {
+    "benign_hard_negative": 457,
+    "compositional_ood": 283,
+    "counterfactual": 420,
+    "institution_role": 320,
+    "multi_turn": 200,
+    "temporal": 320
+  },
+  "heldout_suite_targets": {
+    "benign_hard_negative": 400,
+    "compositional_ood": 320,
+    "counterfactual": 320,
+    "institution_role": 320,
+    "multi_turn": 320,
+    "temporal": 320
+  },
+  "heldout_action_counts": {
+    "ANSWER": 877,
+    "CLARIFY": 229,
+    "ESCALATE": 248,
+    "REFUSE": 646
+  },
+  "heldout_action_proportional_targets": {
+    "ANSWER": 742.6,
+    "CLARIFY": 242.8,
+    "ESCALATE": 399.2,
+    "REFUSE": 615.4
+  },
+  "heldout_benign_components": 5,
+  "heldout_benign_authoring_blocks": 23,
+  "original_infeasible_minimum_benign_components": 40,
+  "amended_minimum_benign_realized_components": 5,
+  "amended_minimum_benign_authoring_blocks": 20,
+  "rows_newly_entering_heldout": 560,
+  "rows_leaving_heldout": 560,
+  "rows_retained_in_heldout": 1440,
+  "lexicographic_objectives": {
+    "minimum_rows_newly_entering_heldout": 560,
+    "minimum_total_suite_absolute_deviation": 314.0,
+    "minimum_total_action_absolute_deviation": 329.99999849820654,
+    "deterministic_tie_break_value": 17.495620737632798
+  },
+  "checks": {
+    "heldout_rows_exact": true,
+    "development_rows_exact": true,
+    "benign_rows_minimum": true,
+    "benign_components_minimum": true,
+    "benign_authoring_blocks_minimum": true,
+    "other_suite_rows_minimum": true,
+    "cross_split_components_zero": true
+  },
+  "gold_actions_used_only_for_final_stratification_objective": true,
+  "model_evaluation_outputs_loaded": false,
+  "input_hashes": {
+    "corpus": "e0fd08d7364e0d8089d50550642e144d71a71d66bdff7d68361218797e83d871",
+    "component_mapping": "f73d72b6f34cc397d02b88b07788d46ce055e5419ffe227c8f31dbb4a4c4571b",
+    "component_report": "5ed223a3736fe94c62115aa855112993541433f100df4fe7c38ab59af0f208a1",
+    "lexical_report": "4ee2a6a92fceed58c000a81955c976fb88ec77e7f145c4498062469ff96a3a94",
+    "diversity_report": "07e0c84b5a1cb15fd8443f04ec609904c959531a27447ff1511370d82bcf81db",
+    "preregistration": "40c9155081ce40ba13cb71367de9cb7cc739170c4621fc85dfa633b4caf0acb9",
+    "split_amendment": "3771cc8de6345db9953a9d87f4e38d80106b54dee7a26aa3ec2b734810eba46d"
+  },
+  "output_hashes": {
+    "realized_component_safe_split_mapping_v014.jsonl": "b56adcff59fb55001b61e7cce51db61e134965c32b18dd70fcf2c3ddf96bb3b5"
+  }
+}

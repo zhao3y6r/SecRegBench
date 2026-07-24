@@ -1,0 +1,37 @@
+{
+  "schema_version": "0.16.0",
+  "status": "PUBLIC_AGGREGATE_GENERATION_AND_REPAIR_PROVENANCE",
+  "surface_generation": {
+    "families": 5750,
+    "label_blind_candidates_per_family": 3,
+    "initial_calls": 17250,
+    "initial_tokens": 10299650,
+    "structurally_valid_candidates": 17213,
+    "invalid_candidates": 37,
+    "selected_first_priority": 5740,
+    "selected_second_priority": 10,
+    "surface_generator_family": "locally served Qwen"
+  },
+  "semantic_repair": {
+    "families": 425,
+    "first_round_calls": 1275,
+    "failure_only_retry_calls": 192,
+    "deterministic_fallback_families": 5
+  },
+  "diversity_repair": {
+    "existing_alternative_rows": 339,
+    "deepseek_candidates": 102,
+    "deepseek_families": 34,
+    "structurally_valid_deepseek_candidates": 101,
+    "selected_deepseek_candidates": 34,
+    "selected_deepseek_rows": 72,
+    "total_changed_dialogues": 411,
+    "selection_used_gold_or_model_evaluation_outputs": false
+  },
+  "public_boundary": {
+    "per_row_generator_identifiers_distributed": false,
+    "raw_model_io_distributed": false,
+    "internal_workflow_identifiers_distributed": false,
+    "labels_are_rule_derived": true
+  }
+}

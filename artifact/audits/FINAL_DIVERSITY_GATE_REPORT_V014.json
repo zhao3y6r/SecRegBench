@@ -1,0 +1,58 @@
+{
+  "schema_version": "0.14.0",
+  "status": "PASS_FROZEN_DIVERSITY_GRAPH_GATES_PENDING_COMPONENT_SAFE_RESPLIT",
+  "observed": {
+    "scenarios": 10000,
+    "families": 5750,
+    "authoring_blocks": 500,
+    "realized_components": 214,
+    "minimum_component_rows": 19,
+    "median_component_rows": 20.0,
+    "maximum_component_rows": 300,
+    "maximum_component_share": 0.03,
+    "hhi": 0.01475952,
+    "effective_components_inverse_hhi": 67.75288085249385,
+    "normalized_dialogues": 6965,
+    "surface_unique_share": 0.6965,
+    "unique_dialogue_state_pairs": 9250,
+    "unique_dialogue_state_pair_share": 0.925,
+    "lexical_edges": 6337,
+    "cross_bounded_cluster_lexical_edges": 0,
+    "cross_bounded_cluster_edge_examples": [],
+    "component_report_cross_split_components_before_resplit": 0
+  },
+  "frozen_gates": {
+    "scenarios": 10000,
+    "families": 5750,
+    "authoring_blocks": 500,
+    "maximum_component_rows": 300,
+    "maximum_component_share": 0.03,
+    "minimum_effective_components_inverse_hhi": 50.0,
+    "minimum_realized_components": 200,
+    "minimum_unique_dialogue_state_pair_share": 0.9,
+    "cross_split_components_after_final_split": 0
+  },
+  "checks": {
+    "scenarios_exact": true,
+    "families_exact": true,
+    "authoring_blocks_exact": true,
+    "maximum_component_rows": true,
+    "maximum_component_share": true,
+    "minimum_effective_components": true,
+    "minimum_realized_components": true,
+    "minimum_unique_dialogue_state_pair_share": true,
+    "zero_cross_bounded_cluster_lexical_edges": true
+  },
+  "all_checks_pass": true,
+  "surface_unique_share_is_descriptive_not_a_hard_gate": true,
+  "gold_or_model_evaluation_outputs_loaded": false,
+  "input_hashes": {
+    "corpus": "e0fd08d7364e0d8089d50550642e144d71a71d66bdff7d68361218797e83d871",
+    "lexical_edges": "56ac12092223de593319f9881da61c2e1c1f3134e9e9bb06625f7fc7497d58a8",
+    "lexical_report": "4ee2a6a92fceed58c000a81955c976fb88ec77e7f145c4498062469ff96a3a94",
+    "component_mapping": "f73d72b6f34cc397d02b88b07788d46ce055e5419ffe227c8f31dbb4a4c4571b",
+    "component_report": "5ed223a3736fe94c62115aa855112993541433f100df4fe7c38ab59af0f208a1",
+    "bounded_clusters": "6c1dc9b13ee6310d0226aebea65ece45d170ac9a047dceed567eb2b95db26c74",
+    "preregistration": "40c9155081ce40ba13cb71367de9cb7cc739170c4621fc85dfa633b4caf0acb9"
+  }
+}

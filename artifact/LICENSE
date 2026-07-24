@@ -1,0 +1,31 @@
+# SecRegBench artifact license notice
+
+Copyright 2026 SecRegBench authors.
+
+## Code
+
+Files under `code/` are licensed under the Apache License, Version 2.0
+(`Apache-2.0`):
+
+https://www.apache.org/licenses/LICENSE-2.0
+
+## Data and non-code artifact material
+
+Files under `data/`, `events/`, `scores/`, `audits/`, `provenance/`, and
+`docs/`, except third-party links and materials explicitly identified
+otherwise, are licensed under the Creative Commons
+Attribution-NonCommercial 4.0 International license (`CC BY-NC 4.0`):
+
+https://creativecommons.org/licenses/by-nc/4.0/
+
+## Exclusions
+
+No model weights, raw regulatory snapshots, verbatim third-party documents,
+production customer data, private prompts, raw model responses, credentials,
+or private infrastructure material are included or licensed by this package.
+Official-source URLs and bibliographic metadata remain subject to their
+respective owners and website terms.
+
+The author has confirmed that the included synthetic model-assisted surface
+text may be redistributed for the stated academic release. This notice is not
+legal advice and does not grant rights in excluded third-party materials.

@@ -1,0 +1,21 @@
+{
+  "schema_version": "0.1.0",
+  "status": "PASS_NO_LONG_EXACT_NORMALIZED_CLAUSE_OVERLAP",
+  "normalization": "Unicode NFKC, lowercase, retain alphanumeric characters only",
+  "minimum_overlap_characters": 24,
+  "corpus_rows": 10000,
+  "clause_rows": 48,
+  "finding_events": 0,
+  "scenarios_flagged": 0,
+  "human_source_terms_reviews": 0,
+  "limitations": [
+    "The scan detects exact normalized substrings only and does not detect paraphrase.",
+    "Shorter conventional regulatory phrases are below the fixed threshold.",
+    "A passing scan is not a source-redistribution or legal approval."
+  ],
+  "hashes": {
+    "corpus": "a459ea29ab434679e6c59a65704318376e2a1ca548cf0d43e89d4df791cd5bdc",
+    "clauses": "2dd53365665d5d42c6f7ee22616611a9909d1ba75274a52bee842dfc56d820bc",
+    "findings": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

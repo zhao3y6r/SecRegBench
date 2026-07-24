@@ -1,0 +1,40 @@
+{
+  "schema_version": "0.16.0",
+  "status": "PASS_PUBLIC_PROJECTION_EQUIVALENCE",
+  "source_complete_corpus_sha256": "a459ea29ab434679e6c59a65704318376e2a1ca548cf0d43e89d4df791cd5bdc",
+  "public_corpus_sha256": "dc6ec37506c8baa26d23cf55a78a7a23f67f5d04c284233389b00cc340c5d878",
+  "scientific_projection_sha256": "7250d41e5a460d7e8d7ba800d4dd38957153205dcb70731f0d91b1be529fc614",
+  "rows": 10000,
+  "scenario_ids_unique": 10000,
+  "scientific_rows_equal": true,
+  "retained_fields": [
+    "component_id",
+    "decision_date",
+    "dialogue",
+    "dialogue_sha256",
+    "family_id",
+    "label",
+    "leakage_component_id",
+    "relation_spec",
+    "scenario_id",
+    "schema_version",
+    "split",
+    "split_protocol_version",
+    "state",
+    "suite"
+  ],
+  "dropped_top_level_entries": 61569,
+  "dropped_top_level_field_categories": 10,
+  "removed_only_operational_metadata": true,
+  "unchanged_contract": [
+    "scenario_id",
+    "dialogue",
+    "state",
+    "label",
+    "family_id",
+    "suite",
+    "leakage_component_id",
+    "split"
+  ],
+  "model_retraining_or_inference_rerun": false
+}

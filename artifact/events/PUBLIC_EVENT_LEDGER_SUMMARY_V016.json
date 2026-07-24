@@ -1,0 +1,47 @@
+{
+  "schema_version": "0.16.0",
+  "status": "PASS_SANITIZED_FIRST_GENERATION_EVENT_LEDGERS",
+  "raw_model_text_distributed": false,
+  "source_artifact_paths_distributed": false,
+  "per_event_request_or_response_hashes_distributed": false,
+  "models": {
+    "primary": {
+      "physical_checkpoint": "Qwen3.5-35B-A3B-GPTQ-Int4",
+      "events": 8000,
+      "first_generation_only": true,
+      "api_errors": 0,
+      "invalid_parses": 0,
+      "action_counts": {
+        "ANSWER": 2474,
+        "CLARIFY": 2868,
+        "ESCALATE": 1717,
+        "REFUSE": 941
+      },
+      "aggregate_materialization_decisions": {
+        "incremental_inference": 188,
+        "reuse": 7812
+      },
+      "total_tokens": 3970237,
+      "public_event_ledger_sha256": "660fb3563967d08bdda392359c23deed5c18d57e27f123cd7c697439d586a8b3"
+    },
+    "secondary": {
+      "physical_checkpoint": "Qwen2.5-7B-Instruct",
+      "events": 8000,
+      "first_generation_only": true,
+      "api_errors": 0,
+      "invalid_parses": 0,
+      "action_counts": {
+        "ANSWER": 1836,
+        "CLARIFY": 5773,
+        "ESCALATE": 151,
+        "REFUSE": 240
+      },
+      "aggregate_materialization_decisions": {
+        "incremental_inference": 2240,
+        "reuse": 5760
+      },
+      "total_tokens": 4071174,
+      "public_event_ledger_sha256": "afd93ef16e13c867271683ff986aa027bca76edc2c3fc912f6bb36e92d0c17fb"
+    }
+  }
+}

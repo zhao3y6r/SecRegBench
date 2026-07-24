@@ -1,0 +1,259 @@
+{
+  "schema_version": "0.14.0",
+  "status": "PASS_V014_ACTION_RISK_DIAGNOSTICS",
+  "definitions": {
+    "premature_answer_rate": "prediction ANSWER among gold CLARIFY targets",
+    "direct_answer_on_nonanswer_rate": "prediction ANSWER among gold CLARIFY, REFUSE, or ESCALATE targets"
+  },
+  "heldout_scenarios_per_method": 2000,
+  "heldout_components": 59,
+  "bootstrap_replicates": 10000,
+  "bootstrap_seed": 27072027,
+  "rows": [
+    {
+      "model": "Qwen3.5-35B",
+      "method": "dialogue_only",
+      "view": "Dialogue",
+      "clarify_targets": 229,
+      "premature_answers": 2,
+      "premature_answer_rate": 0.008733624454148471,
+      "premature_answer_ci95": {
+        "low": 0.0,
+        "high": 0.02072538860103627
+      },
+      "premature_answer_valid_bootstrap_replicates": 10000,
+      "nonanswer_targets": 1123,
+      "direct_answers_on_nonanswer": 215,
+      "direct_answer_on_nonanswer_rate": 0.19145146927871773,
+      "direct_answer_on_nonanswer_ci95": {
+        "low": 0.0822061820223585,
+        "high": 0.33887695483747543
+      },
+      "direct_answer_on_nonanswer_valid_bootstrap_replicates": 10000
+    },
+    {
+      "model": "Qwen3.5-35B",
+      "method": "state_only",
+      "view": "State",
+      "clarify_targets": 229,
+      "premature_answers": 0,
+      "premature_answer_rate": 0.0,
+      "premature_answer_ci95": {
+        "low": 0.0,
+        "high": 0.0
+      },
+      "premature_answer_valid_bootstrap_replicates": 10000,
+      "nonanswer_targets": 1123,
+      "direct_answers_on_nonanswer": 104,
+      "direct_answer_on_nonanswer_rate": 0.09260908281389137,
+      "direct_answer_on_nonanswer_ci95": {
+        "low": 0.020345461421119343,
+        "high": 0.21066624250456897
+      },
+      "direct_answer_on_nonanswer_valid_bootstrap_replicates": 10000
+    },
+    {
+      "model": "Qwen3.5-35B",
+      "method": "oracle_evidence",
+      "view": "Evidence",
+      "clarify_targets": 229,
+      "premature_answers": 0,
+      "premature_answer_rate": 0.0,
+      "premature_answer_ci95": {
+        "low": 0.0,
+        "high": 0.0
+      },
+      "premature_answer_valid_bootstrap_replicates": 10000,
+      "nonanswer_targets": 1123,
+      "direct_answers_on_nonanswer": 125,
+      "direct_answer_on_nonanswer_rate": 0.11130899376669635,
+      "direct_answer_on_nonanswer_ci95": {
+        "low": 0.021450078869683673,
+        "high": 0.25141589489757804
+      },
+      "direct_answer_on_nonanswer_valid_bootstrap_replicates": 10000
+    },
+    {
+      "model": "Qwen3.5-35B",
+      "method": "state_oracle_evidence",
+      "view": "State+evidence",
+      "clarify_targets": 229,
+      "premature_answers": 0,
+      "premature_answer_rate": 0.0,
+      "premature_answer_ci95": {
+        "low": 0.0,
+        "high": 0.0
+      },
+      "premature_answer_valid_bootstrap_replicates": 10000,
+      "nonanswer_targets": 1123,
+      "direct_answers_on_nonanswer": 80,
+      "direct_answer_on_nonanswer_rate": 0.07123775601068566,
+      "direct_answer_on_nonanswer_ci95": {
+        "low": 0.0,
+        "high": 0.1953471334354469
+      },
+      "direct_answer_on_nonanswer_valid_bootstrap_replicates": 10000
+    },
+    {
+      "model": "Qwen2.5-7B",
+      "method": "dialogue_only",
+      "view": "Dialogue",
+      "clarify_targets": 229,
+      "premature_answers": 2,
+      "premature_answer_rate": 0.008733624454148471,
+      "premature_answer_ci95": {
+        "low": 0.0,
+        "high": 0.023166023166023165
+      },
+      "premature_answer_valid_bootstrap_replicates": 10000,
+      "nonanswer_targets": 1123,
+      "direct_answers_on_nonanswer": 7,
+      "direct_answer_on_nonanswer_rate": 0.006233303650934996,
+      "direct_answer_on_nonanswer_ci95": {
+        "low": 0.0017542326094957675,
+        "high": 0.012207838757865377
+      },
+      "direct_answer_on_nonanswer_valid_bootstrap_replicates": 10000
+    },
+    {
+      "model": "Qwen2.5-7B",
+      "method": "state_only",
+      "view": "State",
+      "clarify_targets": 229,
+      "premature_answers": 1,
+      "premature_answer_rate": 0.004366812227074236,
+      "premature_answer_ci95": {
+        "low": 0.0,
+        "high": 0.01509576901086333
+      },
+      "premature_answer_valid_bootstrap_replicates": 10000,
+      "nonanswer_targets": 1123,
+      "direct_answers_on_nonanswer": 27,
+      "direct_answer_on_nonanswer_rate": 0.02404274265360641,
+      "direct_answer_on_nonanswer_ci95": {
+        "low": 0.012573324243126814,
+        "high": 0.037466603432613765
+      },
+      "direct_answer_on_nonanswer_valid_bootstrap_replicates": 10000
+    },
+    {
+      "model": "Qwen2.5-7B",
+      "method": "oracle_evidence",
+      "view": "Evidence",
+      "clarify_targets": 229,
+      "premature_answers": 0,
+      "premature_answer_rate": 0.0,
+      "premature_answer_ci95": {
+        "low": 0.0,
+        "high": 0.0
+      },
+      "premature_answer_valid_bootstrap_replicates": 10000,
+      "nonanswer_targets": 1123,
+      "direct_answers_on_nonanswer": 9,
+      "direct_answer_on_nonanswer_rate": 0.008014247551202136,
+      "direct_answer_on_nonanswer_ci95": {
+        "low": 0.0,
+        "high": 0.020886512270213445
+      },
+      "direct_answer_on_nonanswer_valid_bootstrap_replicates": 10000
+    },
+    {
+      "model": "Qwen2.5-7B",
+      "method": "state_oracle_evidence",
+      "view": "State+evidence",
+      "clarify_targets": 229,
+      "premature_answers": 0,
+      "premature_answer_rate": 0.0,
+      "premature_answer_ci95": {
+        "low": 0.0,
+        "high": 0.0
+      },
+      "premature_answer_valid_bootstrap_replicates": 10000,
+      "nonanswer_targets": 1123,
+      "direct_answers_on_nonanswer": 17,
+      "direct_answer_on_nonanswer_rate": 0.015138023152270703,
+      "direct_answer_on_nonanswer_ci95": {
+        "low": 0.002997002997002997,
+        "high": 0.03127331358477024
+      },
+      "direct_answer_on_nonanswer_valid_bootstrap_replicates": 10000
+    }
+  ],
+  "paired_secondary_minus_primary": [
+    {
+      "method": "dialogue_only",
+      "view": "Dialogue",
+      "secondary_minus_primary_premature_answer_rate": 0.0,
+      "secondary_minus_primary_premature_answer_ci95": {
+        "low": -0.01639344262295082,
+        "high": 0.01875
+      },
+      "premature_answer_valid_bootstrap_replicates": 10000,
+      "secondary_minus_primary_direct_answer_on_nonanswer_rate": -0.18521816562778273,
+      "secondary_minus_primary_direct_answer_on_nonanswer_ci95": {
+        "low": -0.3322873404451038,
+        "high": -0.07602956705385427
+      },
+      "direct_answer_on_nonanswer_valid_bootstrap_replicates": 10000
+    },
+    {
+      "method": "state_only",
+      "view": "State",
+      "secondary_minus_primary_premature_answer_rate": 0.004366812227074236,
+      "secondary_minus_primary_premature_answer_ci95": {
+        "low": 0.0,
+        "high": 0.01509576901086333
+      },
+      "premature_answer_valid_bootstrap_replicates": 10000,
+      "secondary_minus_primary_direct_answer_on_nonanswer_rate": -0.06856634016028496,
+      "secondary_minus_primary_direct_answer_on_nonanswer_ci95": {
+        "low": -0.192727165861854,
+        "high": 0.010152401441755604
+      },
+      "direct_answer_on_nonanswer_valid_bootstrap_replicates": 10000
+    },
+    {
+      "method": "oracle_evidence",
+      "view": "Evidence",
+      "secondary_minus_primary_premature_answer_rate": 0.0,
+      "secondary_minus_primary_premature_answer_ci95": {
+        "low": 0.0,
+        "high": 0.0
+      },
+      "premature_answer_valid_bootstrap_replicates": 10000,
+      "secondary_minus_primary_direct_answer_on_nonanswer_rate": -0.10329474621549421,
+      "secondary_minus_primary_direct_answer_on_nonanswer_ci95": {
+        "low": -0.23103317985429137,
+        "high": -0.02024167090245369
+      },
+      "direct_answer_on_nonanswer_valid_bootstrap_replicates": 10000
+    },
+    {
+      "method": "state_oracle_evidence",
+      "view": "State+evidence",
+      "secondary_minus_primary_premature_answer_rate": 0.0,
+      "secondary_minus_primary_premature_answer_ci95": {
+        "low": 0.0,
+        "high": 0.0
+      },
+      "premature_answer_valid_bootstrap_replicates": 10000,
+      "secondary_minus_primary_direct_answer_on_nonanswer_rate": -0.05609973285841496,
+      "secondary_minus_primary_direct_answer_on_nonanswer_ci95": {
+        "low": -0.16467602142811613,
+        "high": 0.009267894288626115
+      },
+      "direct_answer_on_nonanswer_valid_bootstrap_replicates": 10000
+    }
+  ],
+  "practitioner_validation": "documented_separately_from_machine_scoring",
+  "materialization_status": "PASS_EXACT_REUSE_PLUS_INCREMENTAL_FIRST_GENERATION_MATERIALIZATION",
+  "hashes": {
+    "primary_report": "4681c38f9bf2a7d7275fe09bf979ea2663775c10cdf3f4fca5828874dd887079",
+    "primary_scored_rows": "42056fd7c53d99b5ae10b84eba32a01487689976303cbed3a45ff63304221731",
+    "secondary_report": "d3095e62ead5cd436c276920398c5ab23de5a4e993eb589afe564cb26c62cfbe",
+    "secondary_scored_rows": "00c6d2c01350f8d8d174efb1947f57ce4bf108fb3731eb7e389a6f2c580f073d",
+    "materialization_report": "5f1472b6a6da4a7f7a8816f915f99c178127d8f7b83910c2c5c2662bcf09a25f",
+    "primary_report_corpus": "a459ea29ab434679e6c59a65704318376e2a1ca548cf0d43e89d4df791cd5bdc",
+    "secondary_report_corpus": "a459ea29ab434679e6c59a65704318376e2a1ca548cf0d43e89d4df791cd5bdc"
+  }
+}

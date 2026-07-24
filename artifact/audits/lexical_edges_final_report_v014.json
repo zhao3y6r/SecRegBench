@@ -1,0 +1,29 @@
+{
+  "schema_version": "0.1.0",
+  "records_sha256": "e0fd08d7364e0d8089d50550642e144d71a71d66bdff7d68361218797e83d871",
+  "edges_sha256": "56ac12092223de593319f9881da61c2e1c1f3134e9e9bb06625f7fc7497d58a8",
+  "records": 10000,
+  "normalization": "Unicode NFKC; lowercase; numbers/dates/codes -> <num>; punctuation/space collapsed",
+  "features": {
+    "char": "set of compact character trigrams",
+    "token": "Chinese-character/Latin-word unigrams and adjacent bigrams"
+  },
+  "candidate_generation": {
+    "method": "64-bit deterministic SimHash LSH plus exact-normalized groups",
+    "bands": 4,
+    "max_bucket_size": 500,
+    "candidate_pairs": 47087,
+    "skipped_oversized_buckets": 0
+  },
+  "thresholds": {
+    "char_ngram_jaccard": 0.82,
+    "token_jaccard": 0.88
+  },
+  "edges": 6337,
+  "edge_type_counts": {
+    "char_ngram": 315,
+    "exact_semantic_signature": 5763,
+    "token_jaccard": 259
+  },
+  "embedding_edges_included": false
+}
