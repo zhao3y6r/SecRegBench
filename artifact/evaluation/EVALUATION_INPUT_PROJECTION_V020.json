@@ -1,0 +1,15 @@
+{
+  "schema_version": "0.20.0",
+  "status": "PASS_PUBLIC_EVALUATION_INPUT_PROJECTION",
+  "evidence_inputs": 48,
+  "system_prompt_sha256": "890c4b970085b5a1723d8f045467131b889ed66a2f8358aea4321e2063d3befb",
+  "evidence_inputs_sha256": "46d35c020347473b130ce7cef7a68201f7f5e13e154a1f6718322e20ea05f799",
+  "frozen_reference_jobs": 8000,
+  "frozen_reference_requests": 8000,
+  "reference_job_ids_sha256": "8dc097f8c28270392c4a8041c991e5a00e156812137fa3705e4f7fa018d41af0",
+  "reference_model_input_pairs_sha256": "1cc2b5638723e0c2beac3c9429a5c5ce3696787396cdddbb4128078dd3490705",
+  "reference_request_hash_pairs_sha256": "9e69088f63394a0dd3320d616425b9adb5bc8d042916c8e1ca078565dcff8f2f",
+  "labels_in_model_messages": false,
+  "credentials_endpoints_or_server_paths_distributed": false,
+  "third_party_full_documents_distributed": false
+}

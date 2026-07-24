@@ -22,12 +22,14 @@
 ## Public provenance boundary
 
 The package provides aggregate generation/repair counts, scientific content,
-parsed evaluation events, and hashes. It excludes per-row engine markers,
-internal task/review identifiers, request payloads, raw responses, endpoints,
-serving logs, and private candidate/failure ledgers.
+parsed evaluation events, hashes, the exact evaluation instruction, the
+evidence inputs, and the complete request/compiler/runner/scorer harness. It
+excludes per-row generation-engine markers, internal task/review identifiers,
+raw provider responses, endpoints, serving logs, and private candidate/failure
+ledgers.
 
 Five anonymous securities compliance practitioners completed the released
-500-item validation study. Its high realism result, zero marked material
-scenario defects, and low action agreement are reported together. The study
-does not convert rule-compiled targets into expert gold, legal certification,
-or production approval.
+500-item validation study. The released result includes 100% action agreement
+on the 50 shared items, 77.8% target match across 500 items, 4.01/5 mean
+realism, and all seven material-defect flags. The study does not convert
+rule-compiled targets into legal certification or production approval.

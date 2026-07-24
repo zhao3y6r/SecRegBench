@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify the sanitized SecRegBench public artifact using the standard library."""
+"""Verify the complete SecRegBench v0.20 public artifact."""
 
 from __future__ import annotations
 
@@ -10,6 +10,7 @@ import math
 import re
 import subprocess
 import sys
+import tempfile
 from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any
@@ -41,6 +42,13 @@ def sha256(path: Path) -> str:
         for block in iter(lambda: stream.read(1024 * 1024), b""):
             digest.update(block)
     return digest.hexdigest()
+
+
+def canonical_digest(value: object) -> str:
+    payload = json.dumps(
+        value, ensure_ascii=False, sort_keys=True, separators=(",", ":")
+    )
+    return hashlib.sha256(payload.encode("utf-8")).hexdigest()
 
 
 def read_jsonl(path: Path) -> list[dict[str, Any]]:
@@ -225,7 +233,9 @@ def verify_public_policy(root: Path, manifest: dict[str, Any]) -> None:
     )
     absolute_server_path = re.compile(r"/(?:root|opt|home|srv)/[A-Za-z0-9_./-]+")
     exceptions = {
-        "code/verify_public_artifact_v016.py",
+        "code/verify_public_artifact_v020.py",
+        "code/scripts/compile_evaluation_requests_v020.py",
+        "code/scripts/run_openai_compatible_evaluation_v020.py",
         "docs/RELEASE_NOTES.md",
         "audits/DEEPSEEK_PUBLIC_PROJECTION_V017.json",
     }
@@ -258,7 +268,7 @@ def main() -> int:
     root = args.artifact_root.resolve()
     manifest_path = root / "ARTIFACT_MANIFEST.json"
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
-    if manifest.get("status") != "PUBLIC_RELEASE_V1_READY":
+    if manifest.get("status") != "PUBLIC_RELEASE_V2_READY":
         raise ValueError("unexpected public artifact status")
     if manifest.get("licenses") != {
         "code": "Apache-2.0",
@@ -324,6 +334,110 @@ def main() -> int:
     if sha256(corpus_path) != manifest["public_corpus_sha256"]:
         raise ValueError("public corpus hash mismatch")
 
+    evidence_path = root / "evaluation/evidence_inputs_v020.jsonl"
+    prompt_path = root / "evaluation/system_prompt_zh_v020.txt"
+    evidence = read_jsonl(evidence_path)
+    if len(evidence) != 48 or len({row["clause_id"] for row in evidence}) != 48:
+        raise ValueError("evaluation evidence cardinality mismatch")
+    for row in evidence:
+        required = {
+            "schema_version",
+            "clause_id",
+            "source_id",
+            "article",
+            "jurisdiction",
+            "issuer",
+            "title",
+            "url",
+            "effective_from",
+            "effective_to",
+            "binding_status",
+            "excerpt",
+            "excerpt_sha256",
+        }
+        if set(row) != required:
+            raise ValueError(f"evidence field mismatch: {row.get('clause_id')}")
+        observed = hashlib.sha256(row["excerpt"].encode("utf-8")).hexdigest()
+        if observed != row["excerpt_sha256"]:
+            raise ValueError(f"evidence excerpt hash mismatch: {row['clause_id']}")
+    prompt = prompt_path.read_text(encoding="utf-8").strip()
+    if (
+        not prompt.startswith("你是证券客户服务流程的合规动作分类器")
+        or '{"action":"ANSWER|CLARIFY|REFUSE|ESCALATE"}' not in prompt
+    ):
+        raise ValueError("unexpected evaluation system prompt")
+
+    with tempfile.TemporaryDirectory(prefix="secregbench-v020-") as temporary:
+        compile_process = subprocess.run(
+            [
+                sys.executable,
+                str(root / "code/scripts/compile_evaluation_requests_v020.py"),
+                str(corpus_path),
+                str(root / "data/rule_atoms.jsonl"),
+                str(evidence_path),
+                str(prompt_path),
+                temporary,
+                "--model",
+                "Qwen2-7B-Instruct",
+                "--system-slot",
+                "v014_incremental_local_open_model",
+            ],
+            check=False,
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+        )
+        if compile_process.returncode != 0:
+            raise ValueError(
+                "evaluation compilation failed: "
+                + (compile_process.stderr or compile_process.stdout)
+            )
+        compiled = json.loads(compile_process.stdout)
+        if (
+            compiled.get("status")
+            != "PASS_PUBLIC_LABEL_FREE_EVALUATION_COMPILATION"
+            or compiled.get("jobs") != 8000
+            or compiled.get("requests") != 8000
+            or compiled.get("labels_in_requests") is not False
+        ):
+            raise ValueError("compiled evaluation report mismatch")
+        compiled_jobs = read_jsonl(Path(temporary) / "evaluation_jobs.jsonl")
+        compiled_requests = read_jsonl(
+            Path(temporary) / "evaluation_requests.jsonl"
+        )
+        public_event_ids = {
+            row["job_id"]
+            for row in read_jsonl(root / "events/primary_first_generation.jsonl")
+        }
+        if {row["job_id"] for row in compiled_jobs} != public_event_ids:
+            raise ValueError("compiled job IDs do not match released event ledgers")
+        reference = json.loads(
+            (
+                root / "evaluation/EVALUATION_INPUT_PROJECTION_V020.json"
+            ).read_text(encoding="utf-8")
+        )
+        if (
+            reference.get("status")
+            != "PASS_PUBLIC_EVALUATION_INPUT_PROJECTION"
+            or reference.get("system_prompt_sha256") != sha256(prompt_path)
+            or reference.get("evidence_inputs_sha256") != sha256(evidence_path)
+            or reference.get("reference_model_input_pairs_sha256")
+            != canonical_digest(
+                sorted(
+                    (row["job_id"], row["model_input_sha256"])
+                    for row in compiled_requests
+                )
+            )
+            or reference.get("reference_request_hash_pairs_sha256")
+            != canonical_digest(
+                sorted(
+                    (row["job_id"], row["request_sha256"])
+                    for row in compiled_requests
+                )
+            )
+        ):
+            raise ValueError("compiled requests do not match the frozen reference")
+
     event_forbidden = {
         "".join(("request", "_payload")),
         "".join(("response", "_payload")),
@@ -347,7 +461,7 @@ def main() -> int:
     verify_exact_pairs(root)
     verify_public_policy(root, manifest)
     human_process = subprocess.run(
-        [sys.executable, str(root / "code/verify_human_validation_v017.py")],
+        [sys.executable, str(root / "code/verify_human_validation_v020.py")],
         check=False,
         capture_output=True,
         text=True,
@@ -374,7 +488,7 @@ def main() -> int:
         raise ValueError("projection-equivalence report mismatch")
 
     result = {
-        "status": "PASS_PUBLIC_ARTIFACT_V017",
+        "status": "PASS_PUBLIC_ARTIFACT_V020",
         "manifest_sha256": sha256(manifest_path),
         "manifest_files": len(manifest["files"]),
         "public_corpus_sha256": sha256(corpus_path),
@@ -391,6 +505,14 @@ def main() -> int:
         },
         "deepseek_combined": deepseek["state_oracle_evidence"],
         "human_validation": human_validation,
+        "evaluation_inputs": {
+            "system_prompt_sha256": sha256(prompt_path),
+            "evidence_inputs_sha256": sha256(evidence_path),
+            "evidence_clauses": len(evidence),
+            "compiled_jobs": 8000,
+        },
+        "exact_prompt_and_compiler_distributed": True,
+        "full_evaluation_harness_distributed": True,
         "raw_model_io_distributed": False,
         "private_infrastructure_distributed": False,
         "upload_performed": False,

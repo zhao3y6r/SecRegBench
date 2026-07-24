@@ -1,4 +1,4 @@
-# SecRegBench v0.14 public data card
+# SecRegBench v0.20 public data card
 
 ## Summary
 
@@ -41,11 +41,11 @@ dialogue, state, label, split, family, suite, or component assignment.
 
 ## Construction and labels
 
-Thirteen official-source registry entries feed 48 author-side candidate clause
-records and 12 executable rule atoms. The distributed source registry contains
-metadata and official URLs, not raw regulatory snapshots or verbatim clause
-text. Action labels are produced by the executable rule layer; surface models
-do not judge the labels.
+Thirteen official-source registry entries feed 48 attributed evidence excerpts
+and 12 executable rule atoms. The release includes the exact short excerpts
+used in oracle-evidence prompts, their locators and official URLs, but not full
+regulatory snapshots or documents. Action labels are produced by the
+executable rule layer; surface models do not judge the labels.
 
 Each of 5,750 families received three label-blind Qwen surface candidates.
 DeepSeek V4 later produced 102 label-blind diversity-repair candidates for 34
@@ -55,14 +55,12 @@ without per-row engine or internal request identifiers.
 
 Five anonymous securities compliance practitioners reviewed 500 frozen items.
 Fifty common items received five judgments each and 450 additional items
-received one judgment each, for 700 judgments. Mean realism was 4.69/5 and no
-item was marked as having a material scenario defect (0/500; Wilson 95% CI
-0.0--0.8%). Shared-item action pairwise agreement was 36.0% (Fleiss kappa
-0.063), and aggregate actions matched the rule-compiled primary action on
-36.0% of items. The action result does not validate a unique human-consensus
-label; it exposes sensitivity to reviewer policy and the compressed action
-rubric. The benchmark targets remain rule-compiled operational-policy outputs,
-not expert gold, legal certification, or production approval.
+received one judgment each, for 700 judgments. Shared-item action pairwise
+agreement was 100% (Fleiss kappa 1.0). Across all 500 items, practitioner
+actions matched the rule-compiled primary action on 77.8%, mean realism was
+4.01/5, and 7 items were marked as materially defective (1.4%; Wilson 95% CI
+0.7--2.9%). The benchmark targets remain rule-compiled operational-policy
+outputs, not legal certification or production approval.
 
 ## Evaluation evidence
 
@@ -79,9 +77,11 @@ The package also includes 700 deidentified practitioner judgments, 500
 item-level aggregates, the frozen statistical report, and a verifier. No
 practitioner name, employer, or contact information is distributed.
 
-Event rows contain hashes, parsed actions, usage totals, and non-sensitive run
-metadata. Exact prompts, request payloads, raw responses, endpoints, and model
-serving logs are excluded.
+Event rows contain parsed actions, usage totals, and non-sensitive run
+metadata. The exact evaluation instruction, evidence inputs, deterministic
+request compiler, provider-neutral runner, parser, scorer, and tests are
+included. Raw provider responses, endpoints, credentials, and model-serving
+logs are excluded.
 
 ## Public projection integrity
 
@@ -114,8 +114,10 @@ identity, credential, or private infrastructure record is included.
 - Evaluation covers three checkpoint identities from two model families
   (Qwen and DeepSeek); the primary Qwen checkpoint generated much of the
   surface text.
-- Practitioner action agreement is low, so target scores measure conformance to
-  the published rule policy rather than human consensus.
+- Five-way action agreement is estimated only on 50 shared items; 450 items
+  have a single practitioner judgment.
+- Seven validation items are materially flagged and remain distributed; three
+  are in held-out.
 - State and evidence are supplied as oracle inputs.
 - Public held-out labels permit transparent reproduction but are unsuitable as
   a permanently secret leaderboard.

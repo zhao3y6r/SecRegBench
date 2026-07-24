@@ -1,6 +1,6 @@
-# SecRegBench v0.14 public research artifact
+# SecRegBench v0.20 public research artifact
 
-Status: `PUBLIC_RELEASE_V1_READY`
+Status: `PUBLIC_RELEASE_V2_READY`
 
 SecRegBench is a synthetic Chinese benchmark for deciding whether a
 securities customer-service assistant should `ANSWER`, `CLARIFY`, `REFUSE`, or
@@ -11,7 +11,8 @@ This public package contains:
 - a 10,000-row UTF-8 JSONL benchmark with dialogue, state, rule-derived action
   labels, family/suite membership, realized components, and the fixed
   8,000/2,000 split;
-- source/rule metadata without raw regulatory snapshots or verbatim clauses;
+- source/rule metadata and 48 attributed evidence excerpts without full
+  regulatory snapshots;
 - a category-level audit of 1,833 public CSRC supervisory or punishment
   records, with titles, official URLs, dates, hashes, and category evidence;
 - graph and split mappings;
@@ -20,8 +21,8 @@ This public package contains:
   frozen items, item aggregates, statistical report, and verifier;
 - aggregate construction, repair, scoring, privacy, overlap, and diversity
   reports;
-- selected scoring/audit code, tests, documentation, and a self-contained
-  verifier.
+- the exact evaluation instruction, deterministic request compiler,
+  provider-neutral runner, full scorer, tests, documentation, and verifier.
 
 The public JSONL is a projection of the frozen author-side corpus. Only
 operational fields such as internal candidate/task identifiers, per-row model
@@ -30,30 +31,30 @@ removed. Scenario IDs, dialogue text, typed state, rule-derived labels,
 families, suites, component IDs, and split assignments are unchanged.
 
 It does **not** contain credentials, API endpoints, server addresses, absolute
-server paths, raw prompt/request payloads, raw model response payloads, model
-weights, private candidate/failure ledgers, raw regulatory snapshots,
-practitioner identities, or production customer data.
+server paths, raw provider responses, model weights, private candidate/failure
+ledgers, full regulatory snapshots, practitioner identities, or production
+customer data.
 
 ## Verify
 
 From the extracted package root:
 
 ```bash
-python code/verify_public_artifact_v016.py .
+python code/verify_public_artifact_v020.py .
 ```
 
 Expected status:
 
 ```text
-PASS_PUBLIC_ARTIFACT_V017
+PASS_PUBLIC_ARTIFACT_V020
 ```
 
 The verifier checks manifest hashes, public-field policy, row cardinalities,
 UTF-8 decoding, split/component isolation, action counts, exact
 event/scored-ledger correspondence, selected metrics, the deidentified
-practitioner study, and prohibited operational markers. It verifies the fixed
-public artifact; it does not rerun model inference or reconstruct private
-generation infrastructure.
+practitioner study, and prohibited operational markers. It also reconstructs
+all 8,000 held-out requests and confirms their job identifiers. It does not
+rerun model inference.
 
 ## Generative provenance
 
@@ -72,9 +73,10 @@ not distributed. See `docs/GENERATION_AND_LABEL_DISCLOSURE.md`.
 - `scores/`: scored rows, reports, baseline, and corrected diagnostics
 - `validation/`: deidentified practitioner judgments, item aggregates, and
   statistical report
+- `evaluation/`: exact prompt, evidence inputs, and reconstruction guide
 - `audits/`: quality, privacy, overlap, projection-equivalence, and statistics
 - `provenance/`: aggregate generation and repair counts only
-- `code/`: selected analysis/scoring code, tests, and verifier
+- `code/`: compiler, runner, parser, scorer, analyses, tests, and verifier
 - `docs/`: data card, governance, practitioner scope, licenses, and disclosure
 
 ## Licenses

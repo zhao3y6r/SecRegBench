@@ -1,9 +1,9 @@
 {
-  "schema_version": "0.17.0",
-  "status": "PUBLIC_RELEASE_V1_READY",
-  "built_at_utc": "2026-07-24T07:37:13.991Z",
-  "dataset_version": "SecRegBench v0.17",
-  "release_revision": "v0.17-r9",
+  "schema_version": "0.20.0",
+  "status": "PUBLIC_RELEASE_V2_READY",
+  "built_at_utc": "2026-07-24T08:57:06.747Z",
+  "dataset_version": "SecRegBench v0.20",
+  "release_revision": "v0.20-r10",
   "source_complete_corpus_sha256": "a459ea29ab434679e6c59a65704318376e2a1ca548cf0d43e89d4df791cd5bdc",
   "public_corpus_sha256": "dc6ec37506c8baa26d23cf55a78a7a23f67f5d04c284233389b00cc340c5d878",
   "scientific_projection_sha256": "7250d41e5a460d7e8d7ba800d4dd38957153205dcb70731f0d91b1be529fc614",
@@ -12,7 +12,7 @@
     "data_and_non_code": "CC-BY-NC-4.0"
   },
   "author_confirmed_model_output_redistribution": true,
-  "public_url_embedded": false,
+  "public_url_embedded": true,
   "raw_model_io_distributed": false,
   "private_infrastructure_distributed": false,
   "upload_performed_by_builder": false,
@@ -148,6 +148,16 @@
       "sha256": "8c79917c7a96f7cf7966e9d99b2c73f43a6f6a9c4dee1a756496deb0e4d62c05"
     },
     {
+      "path": "code/scripts/compile_evaluation_requests_v020.py",
+      "bytes": 8461,
+      "sha256": "ec203c1301847e5c362ddd8c043b63619412d4f21dae45467b8398cd9ce7bd56"
+    },
+    {
+      "path": "code/scripts/run_openai_compatible_evaluation_v020.py",
+      "bytes": 9536,
+      "sha256": "03eb6594330a747f84195ec93489275d81ba9be3dcd7ff5eb7e4a85908b3105a"
+    },
+    {
       "path": "code/scripts/score_provisional_evaluation_v012.py",
       "bytes": 23462,
       "sha256": "1e4937f08e043a2d6cdebb9a008c4573c441cd9e7fd716c342f332a05765eb8a"
@@ -173,6 +183,11 @@
       "sha256": "319b56355dafe6cd2969204ce94e256a569ddb4115d42e2d2ff637821123b3a3"
     },
     {
+      "path": "code/tests/test_evaluation_harness_v020.py",
+      "bytes": 2436,
+      "sha256": "dc457101b3f4208fb0a16da70742ad8c7e16c4495f7f3443067ed45e48d18424"
+    },
+    {
       "path": "code/tests/test_scoring_public_v016.py",
       "bytes": 1290,
       "sha256": "7b6961b239c0c67707cdb53b9eab78c6f7db3b1a684cb6dc03b534c903a1f68b"
@@ -183,14 +198,14 @@
       "sha256": "12e08156a16372a76643733271296f389668afac54eaadf8f8c195c040358996"
     },
     {
-      "path": "code/verify_human_validation_v017.py",
-      "bytes": 5797,
-      "sha256": "53b202fd2c706b2e9468dc05350f69ad3e5c969851ffc603bd8bce92db28974c"
+      "path": "code/verify_human_validation_v020.py",
+      "bytes": 5795,
+      "sha256": "c78c38cb162331dc1923f56c23d1960d8cca695cf3561828cfedf0fe6d6d0380"
     },
     {
-      "path": "code/verify_public_artifact_v016.py",
-      "bytes": 15637,
-      "sha256": "32cf69233d1fb943365cfc701f5249c32000174b472a890542ec3dee16823c52"
+      "path": "code/verify_public_artifact_v020.py",
+      "bytes": 20532,
+      "sha256": "930318aaecd9405cf06702df1c8d90ed2102eaca913579d5a3b13ae352cb8eab"
     },
     {
       "path": "data/graph/lexical_edges_v014.jsonl",
@@ -229,28 +244,48 @@
     },
     {
       "path": "docs/DATA_CARD.md",
-      "bytes": 6065,
-      "sha256": "dd9bad2dda75325ec5d5015ded256f8de2d5a2ed8fa9b399f8c1648e4be9dbe3"
+      "bytes": 6138,
+      "sha256": "c5eee312a1fd74c7990521a271de388a1815ce2a47229de9a1de1d9de0ecff00"
     },
     {
       "path": "docs/GENERATION_AND_LABEL_DISCLOSURE.md",
-      "bytes": 1437,
-      "sha256": "9cff7e0690139cdebf3625199ae5f65cea453c787fc6ff0189e4faaff97171c4"
+      "bytes": 1591,
+      "sha256": "06d9ca558b1afd708de363b556f01e744a89c8349e2bc753a4b4c7432230ecb6"
     },
     {
       "path": "docs/GOVERNANCE_AND_MAINTENANCE.md",
       "bytes": 2321,
-      "sha256": "6c5ca96856143c79dc92ad01b8258f0b45cb0b2b32c90c5f1c257c17ab6caff5"
+      "sha256": "c83d0ceaaeb2d7bface0ba34f63a314b077190688e1ef846d6f963d40b99ac41"
     },
     {
       "path": "docs/PRACTITIONER_VALIDATION_DISCLOSURE.md",
-      "bytes": 1163,
-      "sha256": "c4dab466292824abca85b33d654bcabc552ea4564cac6ab514246454c69e8e0b"
+      "bytes": 1248,
+      "sha256": "8709bff8eca984f04366796698698e91ccfb50a106e8dad8066b88e5ff73e151"
     },
     {
       "path": "docs/RELEASE_NOTES.md",
-      "bytes": 2148,
-      "sha256": "b60593e88b4a74abb81812cff10f186a51b4ca1c92c03f86fd03c7347e273075"
+      "bytes": 2336,
+      "sha256": "db4b89ccd96947e1cc64fe7ad809b5a298f4b6e664037d420f8afc40a86450ea"
+    },
+    {
+      "path": "evaluation/EVALUATION_INPUT_PROJECTION_V020.json",
+      "bytes": 838,
+      "sha256": "aee9fbb130ee501d3b18c4255ffe5403b686a4b034397252bffe9af3bfe2a586"
+    },
+    {
+      "path": "evaluation/evidence_inputs_v020.jsonl",
+      "bytes": 40808,
+      "sha256": "46d35c020347473b130ce7cef7a68201f7f5e13e154a1f6718322e20ea05f799"
+    },
+    {
+      "path": "evaluation/README.md",
+      "bytes": 2412,
+      "sha256": "34f6990ef07020af9ff0a60a207031387cc1d192ef9f6db70060f2e5e6d4cd26"
+    },
+    {
+      "path": "evaluation/system_prompt_zh_v020.txt",
+      "bytes": 508,
+      "sha256": "890c4b970085b5a1723d8f045467131b889ed66a2f8358aea4321e2063d3befb"
     },
     {
       "path": "events/deepseek_first_generation.jsonl",
@@ -274,8 +309,8 @@
     },
     {
       "path": "LICENSE",
-      "bytes": 1186,
-      "sha256": "954d2fd3d6065c91320446b5912ba6a9db4a7390a2e4586aa588eb5a5f8cae21"
+      "bytes": 1236,
+      "sha256": "488db6981cf09e3a8e3d4b35882a8ac313399dcb4d86a513344d5fee111acc74"
     },
     {
       "path": "provenance/GENERATION_AND_REPAIR_SUMMARY_V016.json",
@@ -284,8 +319,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 3731,
-      "sha256": "8e8a68a60efff916f51670ddf21f3930ee2da906ccc23b78d6b92a3366e81c96"
+      "bytes": 3857,
+      "sha256": "9dfb9405f1868b2ead8b53cd3dfbd1acd4fb128de383311a4bf0bdef459d9096"
     },
     {
       "path": "scores/corrected/family_diagnostics_corrected.tex",
@@ -348,24 +383,29 @@
       "sha256": "00c6d2c01350f8d8d174efb1947f57ce4bf108fb3731eb7e389a6f2c580f073d"
     },
     {
-      "path": "validation/human_validation/human_item_aggregates_v016.jsonl",
-      "bytes": 258290,
-      "sha256": "040236aafa2e32fcddb0365a7ec972e0847f8013d3eeb25fc3beb451738f55aa"
+      "path": "validation/human_validation/HUMAN_FLAG_SENSITIVITY_V020.json",
+      "bytes": 8039,
+      "sha256": "e24ba04b4a544cdfdeaa66c6dd0343a525b8abcdd2774a36820294dba3df7aca"
     },
     {
-      "path": "validation/human_validation/human_judgments_v016.jsonl",
-      "bytes": 236823,
-      "sha256": "56ad26f20ef51f35469df92c701bcaac3596dccddd7c65d1ae69d24c71b942dd"
+      "path": "validation/human_validation/human_item_aggregates_v020.jsonl",
+      "bytes": 257113,
+      "sha256": "3664cde112ff1e702628786cbbd7ee9a3c62fc37e4319e036a4807b33dbe8564"
     },
     {
-      "path": "validation/human_validation/HUMAN_VALIDATION_REPORT_V016.md",
-      "bytes": 1306,
-      "sha256": "d61a8baf6bbc815496a60088507dbfe788843fbf1fa3da0bc5c34a9142400305"
+      "path": "validation/human_validation/human_judgments_v020.jsonl",
+      "bytes": 236797,
+      "sha256": "84d88f324a03c493f8db109882a19102672c9c5c4565a7dbef3266b210e42b73"
     },
     {
-      "path": "validation/human_validation/HUMAN_VALIDATION_RESULTS_V016.json",
-      "bytes": 5250,
-      "sha256": "1ce904610c1739e8fdcbd0153db336ec4d5b11e78e76207d0848cf6850bb481d"
+      "path": "validation/human_validation/HUMAN_VALIDATION_REPORT_V020.md",
+      "bytes": 1335,
+      "sha256": "e5ec11e0848fd7761690bc4b47927ea02ef6c0a693c7e2eaba1eccde30f09738"
+    },
+    {
+      "path": "validation/human_validation/HUMAN_VALIDATION_RESULTS_V020.json",
+      "bytes": 5157,
+      "sha256": "a60549a88d368699b36235cdb673f3e911f6d6fc9ff43c9f0f959e2289d539f4"
     }
   ],
   "human_validation": {
@@ -373,16 +413,31 @@
     "distinct_items": 500,
     "shared_five_way_items": 50,
     "total_judgments": 700,
-    "action_pairwise_agreement": 0.36,
-    "action_fleiss_kappa": 0.063,
-    "mean_realism_1_to_5": 4.692,
-    "material_defects": 0,
-    "target_action_match": 0.36
+    "action_pairwise_agreement": 1,
+    "action_fleiss_kappa": 1,
+    "mean_realism_1_to_5": 4.0092,
+    "material_defects": 7,
+    "target_action_match": 0.778,
+    "heldout_flagged_items": 3,
+    "max_metric_change_excluding_heldout_flags_percentage_points": 0.07353530295443056
   },
   "deepseek_evaluation": {
     "served_identifier": "deepseek-v4-flash",
     "first_generation_jobs": 8000,
     "raw_model_io_distributed": false,
     "endpoint_or_credential_distributed": false
+  },
+  "public_url": "https://github.com/zhao3y6r/SecRegBench",
+  "exact_prompt_and_compiler_distributed": true,
+  "full_evaluation_harness_distributed": true,
+  "evaluation_reconstruction": {
+    "scenarios": 2000,
+    "information_views": 4,
+    "jobs": 8000,
+    "evidence_inputs": 48,
+    "exact_system_prompt_distributed": true,
+    "deterministic_compiler_distributed": true,
+    "provider_neutral_runner_distributed": true,
+    "complete_scorer_distributed": true
   }
 }

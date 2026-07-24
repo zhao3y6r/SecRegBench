@@ -14,7 +14,8 @@ This repository is the public research artifact accompanying:
 
 - 10,000 synthetic scenarios in 5,750 families;
 - a fixed 8,000/2,000 component-disjoint development/held-out split;
-- public rule and source metadata with links to 13 official sources;
+- public rule/source metadata and 48 attributed evidence excerpts from 13
+  official sources;
 - a fixed category-level audit of 1,833 official CSRC supervisory or
   punishment records, plus the existing 85-item official investor-question
   language proxy;
@@ -22,7 +23,8 @@ This repository is the public research artifact accompanying:
 - 700 deidentified practitioner judgments over 500 frozen items, with item
   aggregates, a statistical report, and a deterministic verifier;
 - aggregate construction, privacy, overlap, diversity, and evaluation reports;
-- selected scoring and audit code, tests, documentation, and a verifier.
+- the exact evaluation system instruction, deterministic request compiler,
+  provider-neutral runner, full scorer, tests, documentation, and a verifier.
 
 The exact frozen release is under [`artifact/`](artifact/). Its public corpus
 SHA-256 is:
@@ -31,18 +33,16 @@ SHA-256 is:
 dc6ec37506c8baa26d23cf55a78a7a23f67f5d04c284233389b00cc340c5d878
 ```
 
-The `v0.17-r9` artifact manifest has SHA-256:
-
-```text
-41b8770b7fcc1e6bd0fe7cb418cca02b928b3a41f2bc72524f9c1b52f74b699a
-```
+The release revision and every payload hash are recorded in
+[`artifact/ARTIFACT_MANIFEST.json`](artifact/ARTIFACT_MANIFEST.json) and
+[`artifact/SHA256SUMS.txt`](artifact/SHA256SUMS.txt).
 
 ## Verify
 
 From the repository root:
 
 ```bash
-python artifact/code/verify_public_artifact_v016.py artifact
+python artifact/code/verify_public_artifact_v020.py artifact
 python -m unittest discover -s artifact/code/tests -p "test_*.py" -v
 ```
 
@@ -62,11 +62,11 @@ snapshots, full source documents, or verbatim clause collections.
 
 Five anonymous securities compliance practitioners reviewed 500 frozen items:
 50 received five-way review and 450 one review each, yielding 700 judgments.
-Mean realism was 4.69/5 and no item was marked as having a material scenario
-defect. Shared-item action agreement was 36.0% (Fleiss kappa 0.063), and
-aggregate actions matched the rule-compiled target on 36.0%. This supports a
-surface-realism check while exposing policy/rubric disagreement; it does not
-make the rule-compiled targets expert gold or legal certification.
+On the shared items, action agreement was 100% (Fleiss kappa 1.0). Across all
+500 items, practitioner actions matched the rule-compiled target on 77.8%,
+mean realism was 4.01/5, and 7 items (1.4%) were marked as materially
+defective. The complete deidentified result is released; it does not make the
+rule-compiled targets legal certification or production approval.
 
 The external audit aligns 11 risk-bearing rule atoms, controlling 8,670
 scenarios, with at least one official regulatory-record category. The remaining
@@ -80,10 +80,12 @@ See [SOURCES_AND_RIGHTS.md](SOURCES_AND_RIGHTS.md) and
 
 ## Privacy and publication boundary
 
-The release contains no raw production customer conversation, customer identifier,
-credential, private server address, API key, raw prompt/request payload, raw
-model response payload, model weight, or named practitioner record. Per-row
-generation-engine and internal workflow identifiers have been removed.
+The release contains no raw production customer conversation, customer
+identifier, credential, private server address, API key, raw provider response,
+model weight, or named practitioner record. It intentionally includes the
+exact evaluation instruction, evidence inputs, and request-building/evaluation
+code. Per-row generation-engine and internal workflow identifiers have been
+removed.
 
 Aggregate use of Qwen, DeepSeek V4, and OpenAI Codex is disclosed in
 [`artifact/docs/GENERATION_AND_LABEL_DISCLOSURE.md`](artifact/docs/GENERATION_AND_LABEL_DISCLOSURE.md).

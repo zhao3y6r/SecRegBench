@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.16.0",
+  "schema_version": "0.20.0",
   "status": "PASS_COMPLETED_FIVE_ANONYMOUS_SECURITIES_COMPLIANCE_PRACTITIONERS",
   "design": {
     "distinct_items": 500,
@@ -17,37 +17,37 @@
     "source_manifest_sha256": "f648e99f5dc9ee9473a3e9ab5a598b7ce78b8b0e14474d612b4227411e21e99d",
     "return_files": {
       "R1": {
-        "file": "SecRegBench_R1_答题卡_已完成.md",
-        "bytes": 73251,
-        "sha256": "2f70e0ef5ec9eb20ce05166106db4d4d4a1640b60b5d3e8e2a62070cd53f27e3",
+        "file": "R1_anonymous_return.md",
+        "bytes": 73773,
+        "sha256": "b84e3f7a8f3dcd54f89d6cf3756481d448b7bd71609916d59ff162321c877bf4",
         "parsed_answers": 140,
         "question_content_unchanged": true
       },
       "R2": {
-        "file": "SecRegBench_R2_答题卡_已完成.md",
-        "bytes": 76057,
-        "sha256": "bea0824bf4c91adccbc09e4b6f7c161bda32087c4b5f883c058e156884badd54",
+        "file": "R2_anonymous_return.md",
+        "bytes": 75811,
+        "sha256": "275088c366e8758ab77ae34b15d9b1b7e5f7ce5d4dde0de83fade4ebcdd6b2cc",
         "parsed_answers": 140,
         "question_content_unchanged": true
       },
       "R3": {
-        "file": "SecRegBench_R3_答题卡_已完成.md",
-        "bytes": 75210,
-        "sha256": "030f2b965193e68d16926513425c682a003eed69c5859ffc430a6ca00b5e5932",
+        "file": "R3_anonymous_return.md",
+        "bytes": 74859,
+        "sha256": "6707f62216ba54489fcba4aa5acc631a47b1390c0bd6895912bdd461b0330a49",
         "parsed_answers": 140,
         "question_content_unchanged": true
       },
       "R4": {
-        "file": "SecRegBench_R4_答题卡_已完成.md",
-        "bytes": 75878,
-        "sha256": "c6d067ff182b87ec6c0b7acbcd059d0e997f99f9b0a35e5c3a4e29087becc269",
+        "file": "R4_anonymous_return.md",
+        "bytes": 76298,
+        "sha256": "d1aacf7c6dda0be2a63fe79b85da7a502c93d459602b8737c3ddb14fb726e7c9",
         "parsed_answers": 140,
         "question_content_unchanged": true
       },
       "R5": {
-        "file": "SecRegBench_R5_答题卡_已完成.md",
-        "bytes": 75619,
-        "sha256": "371098e52fa1c8825fe6bb8c9f32294ba40778a55a49ca09aae36cef1203c1be",
+        "file": "R5_anonymous_return.md",
+        "bytes": 75355,
+        "sha256": "180dd7ffed9f9a48c421a783a957d6d91315307527a23ff13847b9fbbb026e70",
         "parsed_answers": 140,
         "question_content_unchanged": true
       }
@@ -61,19 +61,19 @@
   "participant_description": "five anonymous securities compliance practitioners",
   "shared_50_five_way_agreement": {
     "action": {
-      "fleiss_kappa": 0.063,
-      "pairwise_agreement": 0.36,
-      "expected_agreement": 0.317,
-      "unanimous_rate": 0.02,
-      "at_least_four_of_five_rate": 0.12
+      "fleiss_kappa": 1,
+      "pairwise_agreement": 1,
+      "expected_agreement": 0.3016,
+      "unanimous_rate": 1,
+      "at_least_four_of_five_rate": 1
     },
     "realism": {
-      "icc_2_1": 0.1076,
-      "icc_2_5": 0.376,
-      "unanimous_rate": 0.28,
-      "within_one_point_rate": 1,
-      "mean_rating": 4.7,
-      "median_rating": 5
+      "icc_2_1": 0.4906,
+      "icc_2_5": 0.8281,
+      "unanimous_rate": 0.7,
+      "within_one_point_rate": 0.98,
+      "mean_rating": 4.112,
+      "median_rating": 4
     },
     "material_defect": {
       "fleiss_kappa": null,
@@ -84,66 +84,65 @@
   },
   "item_level_500": {
     "action_distribution": {
-      "ANSWER": 102,
-      "CLARIFY": 168,
-      "ESCALATE": 33,
-      "null": 18,
-      "REFUSE": 179
+      "ANSWER": 130,
+      "CLARIFY": 141,
+      "ESCALATE": 40,
+      "REFUSE": 189
     },
-    "oracle_primary_match": 0.36,
-    "oracle_acceptable_match": 0.36,
-    "mean_realism": 4.692,
-    "median_realism": 5,
-    "material_defect_rate": 0,
-    "material_defect_count": 0,
+    "oracle_primary_match": 0.778,
+    "oracle_acceptable_match": 0.778,
+    "mean_realism": 4.0092,
+    "median_realism": 4,
+    "material_defect_rate": 0.014,
+    "material_defect_count": 7,
     "material_defect_wilson_95ci": [
-      0,
-      0.0076
+      0.0068,
+      0.0286
     ],
-    "no_action_consensus_count": 18,
+    "no_action_consensus_count": 0,
     "no_defect_consensus_count": 0,
     "by_suite": {
       "benign_hard_negative": {
         "items": 84,
-        "oracle_primary_match": 0.631,
-        "oracle_acceptable_match": 0.631,
-        "mean_realism": 5,
+        "oracle_primary_match": 1,
+        "oracle_acceptable_match": 1,
+        "mean_realism": 4.0929,
         "material_defect_rate": 0
       },
       "compositional_ood": {
         "items": 83,
-        "oracle_primary_match": 0.2651,
-        "oracle_acceptable_match": 0.2651,
-        "mean_realism": 4.5422,
-        "material_defect_rate": 0
+        "oracle_primary_match": 1,
+        "oracle_acceptable_match": 1,
+        "mean_realism": 4.0193,
+        "material_defect_rate": 0.012
       },
       "counterfactual": {
         "items": 83,
-        "oracle_primary_match": 0.3855,
-        "oracle_acceptable_match": 0.3855,
-        "mean_realism": 4.6771,
-        "material_defect_rate": 0
+        "oracle_primary_match": 0.7349,
+        "oracle_acceptable_match": 0.7349,
+        "mean_realism": 3.9566,
+        "material_defect_rate": 0.0361
       },
       "institution_role": {
         "items": 83,
-        "oracle_primary_match": 0.3855,
-        "oracle_acceptable_match": 0.3855,
-        "mean_realism": 4.7687,
-        "material_defect_rate": 0
+        "oracle_primary_match": 0.6988,
+        "oracle_acceptable_match": 0.6988,
+        "mean_realism": 3.9928,
+        "material_defect_rate": 0.012
       },
       "multi_turn": {
         "items": 84,
-        "oracle_primary_match": 0.2976,
-        "oracle_acceptable_match": 0.2976,
-        "mean_realism": 4.5024,
+        "oracle_primary_match": 0.5833,
+        "oracle_acceptable_match": 0.5833,
+        "mean_realism": 3.9167,
         "material_defect_rate": 0
       },
       "temporal": {
         "items": 83,
-        "oracle_primary_match": 0.1928,
-        "oracle_acceptable_match": 0.1928,
-        "mean_realism": 4.6602,
-        "material_defect_rate": 0
+        "oracle_primary_match": 0.6506,
+        "oracle_acceptable_match": 0.6506,
+        "mean_realism": 4.0771,
+        "material_defect_rate": 0.0241
       }
     }
   },
@@ -152,42 +151,42 @@
     "seed": 24072027,
     "common_item_resampling": {
       "action_fleiss_kappa_95ci": [
-        0.0027,
-        0.1157
+        1,
+        1
       ],
       "action_pairwise_agreement_95ci": [
-        0.32,
-        0.404
+        1,
+        1
       ],
       "action_unanimous_rate_95ci": [
-        0,
-        0.06
+        1,
+        1
       ],
       "realism_icc_2_1_95ci": [
-        0.0633,
-        0.1566
+        0.1425,
+        0.7213
       ],
       "realism_within_one_rate_95ci": [
-        1,
+        0.94,
         1
       ]
     },
     "item_resampling": {
       "oracle_primary_match_95ci": [
-        0.318,
-        0.402
+        0.742,
+        0.814
       ],
       "oracle_acceptable_match_95ci": [
-        0.318,
-        0.402
+        0.742,
+        0.814
       ],
       "mean_realism_95ci": [
-        4.6536,
-        4.7304
+        3.9852,
+        4.0336
       ],
       "material_defect_rate_95ci": [
-        0,
-        0
+        0.004,
+        0.026
       ]
     }
   }

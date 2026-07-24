@@ -1,18 +1,19 @@
-# SecRegBench public release notes v0.17-r9
+# SecRegBench public release notes v0.20-r10
 
-Status: `PUBLIC_RELEASE_V1_READY`
+Status: `PUBLIC_RELEASE_V2_READY`
 
-This revision preserves the public category-level audit of 1,833 official
-CSRC supervisory or punishment records and adds the complete secret-free
-DeepSeek 8,000-job evaluation projection and the deidentified
-five-practitioner study: 700 judgments over 500 frozen items, 500 item
-aggregates, the statistical report, and a deterministic verifier. The full
-result is retained, including 36.0% shared-item action agreement and 36.0%
-match to rule-compiled targets; labels are not presented as expert gold or
-legal certification.
+This revision replaces the stale practitioner projection with the complete
+latest five-practitioner result: 700 judgments over 500 frozen items, 100%
+action agreement on the 50 shared items, 77.8% match to rule-compiled targets,
+4.01/5 mean realism, and all seven material-defect flags. It also adds the
+exact evaluation system instruction, 48 attributed evidence inputs, a
+deterministic request compiler, a provider-neutral OpenAI-compatible runner,
+the full scorer, and end-to-end verification.
 
-This package is a public projection of the frozen author-side v0.14 artifact.
-It changes distribution metadata only; no model was retrained or rerun.
+No model was retrained or rerun for this revision. A sensitivity analysis
+uses existing predictions and shows that excluding the three flagged held-out
+items changes any reported accuracy, macro-F1, or unsafe-fulfilment point
+estimate by at most 0.074 percentage points.
 
 ## Integrity
 
@@ -23,7 +24,7 @@ It changes distribution metadata only; no model was retrained or rerun.
 - development / held-out: 8,000 / 2,000
 - realized components: 214
 
-## Removed from the public projection
+## Excluded from the public projection
 
 - internal candidate, task, and review identifiers;
 - per-row generator/request/response provenance;
@@ -31,7 +32,7 @@ It changes distribution metadata only; no model was retrained or rerun.
   response hashes;
 - historical private selection metadata;
 - pre-release status fields;
-- raw prompt/request and response payloads;
+- raw provider response payloads;
 - model-serving logs, endpoints, server paths, and infrastructure identifiers;
 - the nested incremental-runtime archive;
 - private candidate/failure ledgers and raw regulatory snapshots.
@@ -42,7 +43,9 @@ It changes distribution metadata only; no model was retrained or rerun.
   component assignment, and split;
 - parsed first-generation events and scored predictions;
 - graph/split mappings, aggregate reports, audits, code, tests, and licenses;
+- exact evaluation prompt/evidence inputs and the complete evaluation harness;
 - aggregate, honest disclosure of Qwen and DeepSeek participation.
 
-The public artifact is intentionally suitable for result verification rather
-than clean-room reconstruction of private model serving.
+The artifact supports clean reconstruction of the label-free model inputs and
+all scoring steps. It does not reconstruct private model-serving
+infrastructure.

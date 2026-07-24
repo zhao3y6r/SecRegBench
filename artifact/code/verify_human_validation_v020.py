@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify the deidentified SecRegBench practitioner-validation release."""
+"""Verify the deidentified SecRegBench v0.20 practitioner-validation release."""
 
 from __future__ import annotations
 
@@ -47,10 +47,10 @@ def fleiss(rows: list[list[str]], categories: tuple[str, ...]) -> tuple[float, f
 def main() -> int:
     root = Path(__file__).resolve().parents[1]
     validation = root / "validation/human_validation"
-    judgments = read_jsonl(validation / "human_judgments_v016.jsonl")
-    aggregates = read_jsonl(validation / "human_item_aggregates_v016.jsonl")
+    judgments = read_jsonl(validation / "human_judgments_v020.jsonl")
+    aggregates = read_jsonl(validation / "human_item_aggregates_v020.jsonl")
     report = json.loads(
-        (validation / "HUMAN_VALIDATION_RESULTS_V016.json").read_text(
+        (validation / "HUMAN_VALIDATION_RESULTS_V020.json").read_text(
             encoding="utf-8"
         )
     )
@@ -84,9 +84,9 @@ def main() -> int:
         [row["reviewer_action"] for row in rows] for rows in shared
     ]
     pairwise, kappa = fleiss(action_matrix, ACTIONS)
-    if not math.isclose(pairwise, 0.36, abs_tol=1e-12):
+    if not math.isclose(pairwise, 1.0, abs_tol=1e-12):
         raise ValueError(f"action pairwise agreement mismatch: {pairwise}")
-    if not math.isclose(kappa, 0.06296851574212885, abs_tol=1e-12):
+    if not math.isclose(kappa, 1.0, abs_tol=1e-12):
         raise ValueError(f"action kappa mismatch: {kappa}")
 
     target_match = mean(
@@ -96,11 +96,11 @@ def main() -> int:
     defects = sum(
         row["consensus_material_defect"] == "Yes" for row in aggregates
     )
-    if not math.isclose(target_match, 0.36, abs_tol=1e-12):
+    if not math.isclose(target_match, 0.778, abs_tol=1e-12):
         raise ValueError(f"target match mismatch: {target_match}")
-    if not math.isclose(realism, 4.692, abs_tol=1e-12):
+    if not math.isclose(realism, 4.0092, abs_tol=1e-12):
         raise ValueError(f"realism mean mismatch: {realism}")
-    if defects != 0:
+    if defects != 7:
         raise ValueError(f"material-defect count mismatch: {defects}")
 
     if report.get("status") != (
@@ -109,10 +109,10 @@ def main() -> int:
         raise ValueError("unexpected human-validation report status")
     observed = report["item_level_500"]
     if (
-        observed["oracle_primary_match"] != 0.36
-        or observed["mean_realism"] != 4.692
-        or observed["material_defect_count"] != 0
-        or observed["material_defect_wilson_95ci"] != [0, 0.0076]
+        observed["oracle_primary_match"] != 0.778
+        or observed["mean_realism"] != 4.0092
+        or observed["material_defect_count"] != 7
+        or observed["material_defect_wilson_95ci"] != [0.0068, 0.0286]
     ):
         raise ValueError("published aggregate mismatch")
 
@@ -141,7 +141,7 @@ def main() -> int:
     print(
         json.dumps(
             {
-                "status": "PASS_DEIDENTIFIED_HUMAN_VALIDATION_V017",
+                "status": "PASS_DEIDENTIFIED_HUMAN_VALIDATION_V020",
                 "judgments": len(judgments),
                 "distinct_items": len(aggregates),
                 "shared_five_way_items": counts[5],

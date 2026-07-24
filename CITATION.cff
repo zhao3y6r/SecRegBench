@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use SecRegBench, please cite the paper and the exact release."
 title: "SecRegBench: Stateful Regulatory Action Evaluation for Securities Customer-Service Assistants"
 type: dataset
-version: "0.16-r7"
+version: "0.20-r10"
 date-released: 2026-07-24
 authors:
   - family-names: "Zhao"
@@ -16,4 +16,3 @@ keywords:
   - stateful dialogue
   - counterfactual evaluation
   - benchmark auditing
-

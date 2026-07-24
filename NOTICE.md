@@ -10,11 +10,11 @@ conversation, or case is unintended.
 ## Regulatory source material
 
 The benchmark design is informed by public official sources. This repository
-contains bibliographic metadata, official URLs, dates, short locators, and
-machine-readable rule abstractions. It intentionally excludes raw source
-snapshots, full official documents, and the author-side clause-text registry.
-Copyright and database rights in third-party source documents, if any, remain
-with their respective rights holders.
+contains bibliographic metadata, official URLs, dates, locators,
+machine-readable rule abstractions, and the 48 short attributed excerpts used
+as evaluation evidence. It intentionally excludes raw source snapshots and
+full official documents. Copyright and database rights in third-party source
+documents, if any, remain with their respective rights holders.
 
 ## Model-related material
 

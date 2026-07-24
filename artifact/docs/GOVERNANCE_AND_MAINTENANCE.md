@@ -1,4 +1,4 @@
-# SecRegBench governance and maintenance plan v0.14
+# SecRegBench governance and maintenance plan v0.20
 
 ## Scope and prohibited uses
 

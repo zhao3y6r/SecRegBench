@@ -29,13 +29,19 @@ Each record provides:
 - scoped article locators and benchmark risk domains;
 - the date and basis of source verification.
 
-## What the repository does not copy
+## Evidence excerpts and what the repository does not copy
+
+For exact experimental reconstruction, the artifact includes 48 short
+official-source excerpts with document titles, issuers, article locators,
+effective dates, hashes, and official URLs. They are the exact evidence
+strings supplied in the oracle-evidence views. The project claims no ownership
+of third-party official text, and the project licenses do not relicense it.
 
 This repository does not distribute:
 
 - downloaded PDFs, DOCX files, HTML snapshots, or screenshots from official
   websites;
-- a verbatim collection of regulatory clauses;
+- complete regulatory documents or a general-purpose full-text collection;
 - subscription, commercial, or internal legal databases;
 - proprietary securities-firm policies;
 - third-party annotations copied from another benchmark.
@@ -60,4 +66,3 @@ If a rights holder believes a file reproduces protected content beyond
 permitted citation, metadata, or research use, follow
 [TAKEDOWN_POLICY.md](TAKEDOWN_POLICY.md). A specific file path, official source
 URL, rights basis, and requested remedy will allow a faster review.
-

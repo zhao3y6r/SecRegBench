@@ -21,15 +21,16 @@ repository URL.
 The licenses above do not grant rights in:
 
 - third-party laws, regulations, regulatory decisions, exchange rules, or
-  official documents linked from source metadata;
+  official documents, including the attributed excerpts in
+  `artifact/evaluation/evidence_inputs_v020.jsonl`;
 - third-party model implementations, trademarks, checkpoints, or weights;
 - content available only at third-party URLs;
 - names, marks, or logos of regulators, exchanges, model providers, or other
   organizations.
 
-No raw regulatory document, model weight, production customer record, private
-prompt, or raw model-response payload is included in the release.
+No full regulatory document, model weight, production customer record,
+credential, private endpoint, or raw model-response payload is included in the
+release.
 
 For the file-level declaration embedded in the frozen artifact, see
 [`artifact/LICENSE`](artifact/LICENSE).
-
