@@ -1,0 +1,299 @@
+{
+  "schema_version": "0.1.0",
+  "status": "PASS_PUBLIC_REGULATORY_RECORD_CATEGORY_ALIGNMENT_NOT_REAL_DIALOGUE_VALIDATION",
+  "retrieved_at": "2026-07-24T03:39:09.347Z",
+  "official_search_endpoint": "https://www.csrc.gov.cn/getSearch",
+  "channels": [
+    {
+      "id": "2f087f7010fb43788a9015f21448447a",
+      "key": "hunan_administrative_supervisory_measures",
+      "name": "CSRC Hunan Regulatory Bureau: Administrative Supervisory Measures",
+      "landing_page": "https://www.csrc.gov.cn/hunan/c104484/zfxxgk_zdgk.shtml",
+      "fixed_queries": [
+        "投资顾问",
+        "适当性",
+        "客户投诉",
+        "投诉处理",
+        "承诺收益",
+        "变相承诺",
+        "虚假宣传",
+        "误导性",
+        "投资建议",
+        "客户回访",
+        "业务推广",
+        "营销",
+        "无资质",
+        "风险揭示",
+        "客户服务",
+        "从业资格",
+        "公众媒体",
+        "直播",
+        "微信",
+        "荐股",
+        "证券推荐",
+        "产品推荐",
+        "个人信息",
+        "客户信息",
+        "信息泄露",
+        "交易权限",
+        "知识测评答案",
+        "留痕",
+        "合规审核",
+        "内幕信息",
+        "利益冲突"
+      ]
+    },
+    {
+      "id": "8d1c236a98924e38a854bbb9f215efb9",
+      "key": "csrc_central_administrative_punishments",
+      "name": "China Securities Regulatory Commission: Administrative Punishments",
+      "landing_page": "https://www.csrc.gov.cn/csrc/c101928/zfxxgk_zdgk.shtml",
+      "fixed_queries": [
+        "证券投资咨询",
+        "投资建议",
+        "适当性",
+        "承诺收益",
+        "虚假宣传",
+        "客户投诉",
+        "内幕交易",
+        "操纵市场"
+      ]
+    }
+  ],
+  "query_totals_before_deduplication": {
+    "hunan_administrative_supervisory_measures": {
+      "投资顾问": 56,
+      "适当性": 49,
+      "客户投诉": 2,
+      "投诉处理": 4,
+      "承诺收益": 25,
+      "变相承诺": 2,
+      "虚假宣传": 2,
+      "误导性": 31,
+      "投资建议": 29,
+      "客户回访": 4,
+      "业务推广": 26,
+      "营销": 22,
+      "无资质": 4,
+      "风险揭示": 5,
+      "客户服务": 17,
+      "从业资格": 9,
+      "公众媒体": 0,
+      "直播": 5,
+      "微信": 32,
+      "荐股": 8,
+      "证券推荐": 0,
+      "产品推荐": 1,
+      "个人信息": 0,
+      "客户信息": 2,
+      "信息泄露": 1,
+      "交易权限": 0,
+      "知识测评答案": 0,
+      "留痕": 19,
+      "合规审核": 1,
+      "内幕信息": 1,
+      "利益冲突": 4
+    },
+    "csrc_central_administrative_punishments": {
+      "证券投资咨询": 223,
+      "投资建议": 78,
+      "适当性": 268,
+      "承诺收益": 82,
+      "虚假宣传": 65,
+      "客户投诉": 28,
+      "内幕交易": 935,
+      "操纵市场": 395
+    }
+  },
+  "regulatory_records_after_deduplication_and_category_filter": 1833,
+  "regulatory_records_by_channel": {
+    "hunan_administrative_supervisory_measures": 120,
+    "csrc_central_administrative_punishments": 1713
+  },
+  "regulatory_records_by_category": {
+    "misleading_or_guaranteed_marketing": 323,
+    "recordkeeping_and_review": 230,
+    "unqualified_or_scoped_advice": 426,
+    "market_manipulation": 245,
+    "conflict_of_interest": 68,
+    "suitability_and_access": 363,
+    "inside_information": 945,
+    "public_or_social_channel": 250,
+    "complaint_workflow": 39,
+    "privacy_or_customer_information": 47
+  },
+  "regulatory_record_date_range": {
+    "earliest": "1995-02-11",
+    "latest": "2026-07-20"
+  },
+  "official_investor_question_proxy_items": 85,
+  "combined_public_external_anchor_items": 1918,
+  "scenario_category_anchor_coverage": {
+    "scenario_count": 10000,
+    "scenarios_with_regulatory_record_category": 8670,
+    "scenarios_with_any_public_anchor": 10000,
+    "rule_coverage": {
+      "RULE-CN-ACCESS-FAIL-REFUSE": {
+        "scenario_support": 500,
+        "external_categories": [
+          "suitability_and_access"
+        ],
+        "regulatory_record_categories_present": [
+          "suitability_and_access"
+        ],
+        "covered_by_regulatory_records": true,
+        "covered_by_combined_public_anchors": true
+      },
+      "RULE-CN-ADVICE-ASSESSMENT-GATE": {
+        "scenario_support": 7408,
+        "external_categories": [
+          "unqualified_or_scoped_advice",
+          "suitability_and_access"
+        ],
+        "regulatory_record_categories_present": [
+          "unqualified_or_scoped_advice",
+          "suitability_and_access"
+        ],
+        "covered_by_regulatory_records": true,
+        "covered_by_combined_public_anchors": true
+      },
+      "RULE-CN-COMPLAINT-ROUTE": {
+        "scenario_support": 222,
+        "external_categories": [
+          "complaint_workflow"
+        ],
+        "regulatory_record_categories_present": [
+          "complaint_workflow"
+        ],
+        "covered_by_regulatory_records": true,
+        "covered_by_combined_public_anchors": true
+      },
+      "RULE-CN-DIRECT-AI-PERSONALIZED-ESCALATE": {
+        "scenario_support": 2717,
+        "external_categories": [
+          "unqualified_or_scoped_advice",
+          "public_or_social_channel"
+        ],
+        "regulatory_record_categories_present": [
+          "unqualified_or_scoped_advice",
+          "public_or_social_channel"
+        ],
+        "covered_by_regulatory_records": true,
+        "covered_by_combined_public_anchors": true
+      },
+      "RULE-CN-EDUCATION-ANSWER": {
+        "scenario_support": 1330,
+        "external_categories": [
+          "official_investor_question_proxy"
+        ],
+        "regulatory_record_categories_present": [],
+        "covered_by_regulatory_records": false,
+        "covered_by_combined_public_anchors": true
+      },
+      "RULE-CN-GUARANTEE-REFUSE": {
+        "scenario_support": 160,
+        "external_categories": [
+          "misleading_or_guaranteed_marketing"
+        ],
+        "regulatory_record_categories_present": [
+          "misleading_or_guaranteed_marketing"
+        ],
+        "covered_by_regulatory_records": true,
+        "covered_by_combined_public_anchors": true
+      },
+      "RULE-CN-INSIDE-INFO-REFUSE": {
+        "scenario_support": 32,
+        "external_categories": [
+          "inside_information"
+        ],
+        "regulatory_record_categories_present": [
+          "inside_information"
+        ],
+        "covered_by_regulatory_records": true,
+        "covered_by_combined_public_anchors": true
+      },
+      "RULE-CN-INVESTOR-INITIATED-MISMATCH-ESCALATE": {
+        "scenario_support": 283,
+        "external_categories": [
+          "suitability_and_access"
+        ],
+        "regulatory_record_categories_present": [
+          "suitability_and_access"
+        ],
+        "covered_by_regulatory_records": true,
+        "covered_by_combined_public_anchors": true
+      },
+      "RULE-CN-LOWEST-RISK-UNMATCHED-REFUSE": {
+        "scenario_support": 533,
+        "external_categories": [
+          "suitability_and_access"
+        ],
+        "regulatory_record_categories_present": [
+          "suitability_and_access"
+        ],
+        "covered_by_regulatory_records": true,
+        "covered_by_combined_public_anchors": true
+      },
+      "RULE-CN-MANIPULATION-REFUSE": {
+        "scenario_support": 32,
+        "external_categories": [
+          "market_manipulation"
+        ],
+        "regulatory_record_categories_present": [
+          "market_manipulation"
+        ],
+        "covered_by_regulatory_records": true,
+        "covered_by_combined_public_anchors": true
+      },
+      "RULE-CN-PROACTIVE-UNSUITABLE-REFUSE": {
+        "scenario_support": 1750,
+        "external_categories": [
+          "suitability_and_access",
+          "misleading_or_guaranteed_marketing"
+        ],
+        "regulatory_record_categories_present": [
+          "suitability_and_access",
+          "misleading_or_guaranteed_marketing"
+        ],
+        "covered_by_regulatory_records": true,
+        "covered_by_combined_public_anchors": true
+      },
+      "RULE-CN-PUBLIC-SPECIFIC-ADVICE-REFUSE": {
+        "scenario_support": 320,
+        "external_categories": [
+          "unqualified_or_scoped_advice",
+          "public_or_social_channel"
+        ],
+        "regulatory_record_categories_present": [
+          "unqualified_or_scoped_advice",
+          "public_or_social_channel"
+        ],
+        "covered_by_regulatory_records": true,
+        "covered_by_combined_public_anchors": true
+      }
+    }
+  },
+  "hashes": {
+    "registry_sha256": "2999b634e18fa0dd654523a499427624a6106d791f1701d6b0536cdee335294d",
+    "corpus_sha256": "dc6ec37506c8baa26d23cf55a78a7a23f67f5d04c284233389b00cc340c5d878",
+    "external_style_proxy_report_sha256": "8b827b6a836afb3174e6670a8c5c78cfb427b967cdd1a7383b2127622457c808"
+  },
+  "claim_boundary": {
+    "permitted": "The synthetic benchmark is grounded in registered public rules and its rule categories are externally aligned with a deterministically retrieved pool of official supervisory/punishment records; a separate official-question proxy measures surface-language distance.",
+    "not_permitted": [
+      "The 10,000 synthetic scenarios are 10,000 real punishment cases.",
+      "The official records are customer-service conversation logs.",
+      "Category alignment establishes production-traffic representativeness.",
+      "Keyword retrieval or category alignment supplies item-level gold actions."
+    ],
+    "raw_official_content_redistributed": false,
+    "registry_contains": [
+      "official title",
+      "official URL",
+      "publication date",
+      "content hash",
+      "fixed query terms",
+      "deterministic category tags and evidence terms"
+    ]
+  }
+}

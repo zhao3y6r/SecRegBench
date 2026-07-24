@@ -15,6 +15,9 @@ This repository is the public research artifact accompanying:
 - 10,000 synthetic scenarios in 5,750 families;
 - a fixed 8,000/2,000 component-disjoint development/held-out split;
 - public rule and source metadata with links to 13 official sources;
+- a fixed category-level audit of 1,833 official CSRC supervisory or
+  punishment records, plus the existing 85-item official investor-question
+  language proxy;
 - two sanitized 8,000-event model ledgers and 16,000 scored rows;
 - aggregate construction, privacy, overlap, diversity, and evaluation reports;
 - selected scoring and audit code, tests, documentation, and a verifier.
@@ -54,12 +57,25 @@ rules. The repository distributes source titles, issuers, dates, article
 locators, and official URLs. It does **not** redistribute raw regulatory
 snapshots, full source documents, or verbatim clause collections.
 
+Three anonymous securities-industry reviewers familiar with production
+customer-service records across multiple brokerages reviewed the design, rule
+interpretations, label logic, and corpus examples. This establishes a
+practitioner realism check, not that production conversations are included in
+the public corpus.
+
+The external audit aligns 11 risk-bearing rule atoms, controlling 8,670
+scenarios, with at least one official regulatory-record category. The remaining
+1,330 general-education scenarios use only the 85-item official-page language
+proxy. Category alignment does not make a synthetic scenario a real
+enforcement case or an item-level gold record. See
+[`artifact/audits/external_regulatory_cases/`](artifact/audits/external_regulatory_cases/).
+
 See [SOURCES_AND_RIGHTS.md](SOURCES_AND_RIGHTS.md) and
 [`artifact/data/source_registry.jsonl`](artifact/data/source_registry.jsonl).
 
 ## Privacy and publication boundary
 
-The release contains no production customer conversation, customer identifier,
+The release contains no raw production customer conversation, customer identifier,
 credential, private server address, API key, raw prompt/request payload, raw
 model response payload, model weight, or named practitioner record. Per-row
 generation-engine and internal workflow identifiers have been removed.
@@ -92,4 +108,3 @@ institution is regulator-certified.
   in a public issue.
 - Corrections should identify the release version and affected scenario,
   family, source, or file.
-

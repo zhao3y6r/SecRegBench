@@ -1,9 +1,9 @@
 {
-  "schema_version": "0.16.0",
+  "schema_version": "0.17.0",
   "status": "PUBLIC_RELEASE_V1_READY",
-  "built_at_utc": "2026-07-23T17:00:02.155424+00:00",
+  "built_at_utc": "2026-07-24T03:40:07.237Z",
   "dataset_version": "SecRegBench v0.14",
-  "release_revision": "v0.16-r7",
+  "release_revision": "v0.17-r1",
   "source_complete_corpus_sha256": "a459ea29ab434679e6c59a65704318376e2a1ca548cf0d43e89d4df791cd5bdc",
   "public_corpus_sha256": "dc6ec37506c8baa26d23cf55a78a7a23f67f5d04c284233389b00cc340c5d878",
   "scientific_projection_sha256": "7250d41e5a460d7e8d7ba800d4dd38957153205dcb70731f0d91b1be529fc614",
@@ -18,14 +18,9 @@
   "upload_performed_by_builder": false,
   "files": [
     {
-      "path": "LICENSE",
-      "bytes": 1186,
-      "sha256": "954d2fd3d6065c91320446b5912ba6a9db4a7390a2e4586aa588eb5a5f8cae21"
-    },
-    {
-      "path": "README.md",
-      "bytes": 3388,
-      "sha256": "ef5dde39bc68429ef9be4d8e30018d998e1b62739084fc2be0a2756e9fc9960c"
+      "path": "audits/action_risk_report_v014.json",
+      "bytes": 9521,
+      "sha256": "c52c07f2887e624afef7e65a7024049102d35a516728cc97d851a97d8ed840f9"
     },
     {
       "path": "audits/COMPONENT_SAFE_RESPLIT_REPORT_V014.json",
@@ -38,19 +33,29 @@
       "sha256": "71fc7aeba418c66ba7e9847e5123643a0bcc7e0f2f1d7bb93f92d059f5bc1d52"
     },
     {
+      "path": "audits/external_regulatory_cases/external_style_proxy_report_v013.json",
+      "bytes": 2897,
+      "sha256": "8b827b6a836afb3174e6670a8c5c78cfb427b967cdd1a7383b2127622457c808"
+    },
+    {
+      "path": "audits/external_regulatory_cases/official_regulatory_case_audit_report_v017.json",
+      "bytes": 9776,
+      "sha256": "c5a4fc3bdfbe2d5c9859c94ba3f37bf30553ee2565e53314132cce479897626f"
+    },
+    {
+      "path": "audits/external_regulatory_cases/official_regulatory_records_v017.jsonl",
+      "bytes": 1198514,
+      "sha256": "2999b634e18fa0dd654523a499427624a6106d791f1701d6b0536cdee335294d"
+    },
+    {
+      "path": "audits/external_regulatory_cases/README.md",
+      "bytes": 2030,
+      "sha256": "92bebe9f5494933c89d8e5e59d1fb67dbdf3bb00880aaf525d7075df35ffc43c"
+    },
+    {
       "path": "audits/FINAL_DIVERSITY_GATE_REPORT_V014.json",
       "bytes": 2403,
       "sha256": "f6baed3bcd547d7e3e3d8c142d781fec15231b943f28d3cd98ebc0786ca84531"
-    },
-    {
-      "path": "audits/PUBLIC_PROJECTION_EQUIVALENCE_V016.json",
-      "bytes": 1137,
-      "sha256": "e542a60d4370396b5a663dabac3e8fac9467d9df20965ae5542c0ca4e97a6dd6"
-    },
-    {
-      "path": "audits/action_risk_report_v014.json",
-      "bytes": 9521,
-      "sha256": "c52c07f2887e624afef7e65a7024049102d35a516728cc97d851a97d8ed840f9"
     },
     {
       "path": "audits/lexical_edges_final_report_v014.json",
@@ -58,14 +63,19 @@
       "sha256": "e702fa787b66a65c02363f42e2943fc9988afd145c3d9f08ef02da64fe39c4f8"
     },
     {
+      "path": "audits/privacy/privacy_pattern_findings.jsonl",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
       "path": "audits/privacy/SYNTHETIC_PRIVACY_SCAN_REPORT_V014.json",
       "bytes": 1493,
       "sha256": "f112bd6414d03250694e21530d557f42214b2b9b7733b900129b64b16d09b972"
     },
     {
-      "path": "audits/privacy/privacy_pattern_findings.jsonl",
-      "bytes": 0,
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      "path": "audits/PUBLIC_PROJECTION_EQUIVALENCE_V016.json",
+      "bytes": 1137,
+      "sha256": "e542a60d4370396b5a663dabac3e8fac9467d9df20965ae5542c0ca4e97a6dd6"
     },
     {
       "path": "audits/realized_components_final_report_v014.json",
@@ -73,19 +83,34 @@
       "sha256": "cce750927b0078b5f467386b8d0f95b7c6f7494fae3ddce743d48705863e626c"
     },
     {
-      "path": "audits/source_overlap/REGULATORY_TEXT_OVERLAP_REPORT_V014.json",
-      "bytes": 890,
-      "sha256": "331c71f23cb4f0a57793e8f0db40a2ff4b19a48654e8df27115e545b71840b3d"
-    },
-    {
       "path": "audits/source_overlap/regulatory_text_overlap_findings.jsonl",
       "bytes": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
+      "path": "audits/source_overlap/REGULATORY_TEXT_OVERLAP_REPORT_V014.json",
+      "bytes": 890,
+      "sha256": "331c71f23cb4f0a57793e8f0db40a2ff4b19a48654e8df27115e545b71840b3d"
+    },
+    {
       "path": "code/requirements-core.txt",
       "bytes": 33,
       "sha256": "4ba04bb4f0c295bfe67f13caabf53c5b831e8e428b8ebf751028f1d94e37b5f5"
+    },
+    {
+      "path": "code/scripts/__pycache__/audit_regulatory_text_overlap_v013.cpython-312.pyc",
+      "bytes": 6980,
+      "sha256": "d45126e932b1172a3dc2223376352df9db03aa00e46d6bd2b8dd249f16d63fbb"
+    },
+    {
+      "path": "code/scripts/__pycache__/audit_synthetic_privacy_v014.cpython-312.pyc",
+      "bytes": 7152,
+      "sha256": "991dbe6b4b69f3a6fff01b103cb0a19c116c65aa38790b4d0cd30babf27dca50"
+    },
+    {
+      "path": "code/scripts/__pycache__/score_provisional_evaluation_v012.cpython-312.pyc",
+      "bytes": 29475,
+      "sha256": "2939811af7d747097ab786570aa4c03d6e62f5a707f8b2bf96eb48358e790ce8"
     },
     {
       "path": "code/scripts/analyze_action_risk_diagnostics_v014.py",
@@ -123,6 +148,11 @@
       "sha256": "3c5f2d14494b8429d6216093b24636f4f56fdcafb3cd045801d5fa2f568856bb"
     },
     {
+      "path": "code/scripts/build_public_regulatory_case_registry_v017.mjs",
+      "bytes": 15804,
+      "sha256": "9ef0a4c92a02c7f98a25f858b42e7b049a06084eff07ba1a937cadbdfc1dcee6"
+    },
+    {
       "path": "code/scripts/build_secondary_comparison_asset_v014.py",
       "bytes": 7137,
       "sha256": "8c79917c7a96f7cf7966e9d99b2c73f43a6f6a9c4dee1a756496deb0e4d62c05"
@@ -146,6 +176,21 @@
       "path": "code/src/secregbench/views.py",
       "bytes": 5197,
       "sha256": "e5bcce7e6e021ede5fd01dad13d58c7c029d02dc2d1a4985daca890b3c6ef597"
+    },
+    {
+      "path": "code/tests/__pycache__/test_audit_regulatory_text_overlap_v013.cpython-312.pyc",
+      "bytes": 2058,
+      "sha256": "5273e8e39e3aa40fb2b6750d824f9e344c0025b851c56470cf497261273b0409"
+    },
+    {
+      "path": "code/tests/__pycache__/test_scoring_public_v016.cpython-312.pyc",
+      "bytes": 2556,
+      "sha256": "9d42828ac7368e86a6cede50c09887757768a3401fb037505ef2bdb5959626fe"
+    },
+    {
+      "path": "code/tests/__pycache__/test_synthetic_privacy_public_v016.cpython-312.pyc",
+      "bytes": 2286,
+      "sha256": "db48ca00100c4a30b33766f4a10c0603cb45670e209519578f45decac8dbfb02"
     },
     {
       "path": "code/tests/test_audit_regulatory_text_overlap_v013.py",
@@ -224,13 +269,8 @@
     },
     {
       "path": "docs/RELEASE_NOTES.md",
-      "bytes": 1660,
-      "sha256": "bac558128b130ce7f406eb129e2045765c4e486691e90ed393af34ffacffd8b9"
-    },
-    {
-      "path": "events/PUBLIC_EVENT_LEDGER_SUMMARY_V016.json",
-      "bytes": 1445,
-      "sha256": "f67b4b2a522e9870bf60c318605e4dad37e54432c2c623941686af48bade60c5"
+      "bytes": 1905,
+      "sha256": "2cae913593adde2e9f7165e4cb4cb4d9e645c1c96cffd8ab569fe7b34782971c"
     },
     {
       "path": "events/primary_first_generation.jsonl",
@@ -238,14 +278,34 @@
       "sha256": "660fb3563967d08bdda392359c23deed5c18d57e27f123cd7c697439d586a8b3"
     },
     {
+      "path": "events/PUBLIC_EVENT_LEDGER_SUMMARY_V016.json",
+      "bytes": 1445,
+      "sha256": "f67b4b2a522e9870bf60c318605e4dad37e54432c2c623941686af48bade60c5"
+    },
+    {
       "path": "events/secondary_first_generation.jsonl",
       "bytes": 1949048,
       "sha256": "afd93ef16e13c867271683ff986aa027bca76edc2c3fc912f6bb36e92d0c17fb"
     },
     {
+      "path": "LICENSE",
+      "bytes": 1186,
+      "sha256": "954d2fd3d6065c91320446b5912ba6a9db4a7390a2e4586aa588eb5a5f8cae21"
+    },
+    {
       "path": "provenance/GENERATION_AND_REPAIR_SUMMARY_V016.json",
       "bytes": 1216,
       "sha256": "4e7667548146bda717c4fbb1c0c29ddd20b2a34608c586176f1da90589537366"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3676,
+      "sha256": "4d4c06da72fff16b934cb4415734ee58fb9408ba227073724d1537c493358ed5"
+    },
+    {
+      "path": "scores/corrected/family_diagnostics_corrected.tex",
+      "bytes": 842,
+      "sha256": "839e210c47aaf2270186277f2d125abecca2c473e310bffb1153753ea6860380"
     },
     {
       "path": "scores/corrected/REVIEW_CORRECTION_DIAGNOSTICS_V014.json",
@@ -256,11 +316,6 @@
       "path": "scores/corrected/REVIEW_CORRECTION_SUMMARY_V014.md",
       "bytes": 439,
       "sha256": "3fd5f76d1ce4518e29c4fc94b5f90afdc0179bf10287a2bf3b9309b7738bbc72"
-    },
-    {
-      "path": "scores/corrected/family_diagnostics_corrected.tex",
-      "bytes": 842,
-      "sha256": "839e210c47aaf2270186277f2d125abecca2c473e310bffb1153753ea6860380"
     },
     {
       "path": "scores/keyword_baseline/model.json",
