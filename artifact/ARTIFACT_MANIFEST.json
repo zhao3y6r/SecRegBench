@@ -1,7 +1,7 @@
 {
   "schema_version": "0.17.0",
   "status": "PUBLIC_RELEASE_V1_READY",
-  "built_at_utc": "2026-07-24T07:35:10.172Z",
+  "built_at_utc": "2026-07-24T07:37:13.991Z",
   "dataset_version": "SecRegBench v0.17",
   "release_revision": "v0.17-r9",
   "source_complete_corpus_sha256": "a459ea29ab434679e6c59a65704318376e2a1ca548cf0d43e89d4df791cd5bdc",
@@ -189,8 +189,8 @@
     },
     {
       "path": "code/verify_public_artifact_v016.py",
-      "bytes": 15551,
-      "sha256": "d2581ce31568d78e1d279d1c166d6e336049012791219d7fb1e7da59c069a304"
+      "bytes": 15637,
+      "sha256": "32cf69233d1fb943365cfc701f5249c32000174b472a890542ec3dee16823c52"
     },
     {
       "path": "data/graph/lexical_edges_v014.jsonl",
