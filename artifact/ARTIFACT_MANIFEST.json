@@ -1,9 +1,9 @@
 {
-  "schema_version": "0.20.0",
-  "status": "PUBLIC_RELEASE_V2_READY",
-  "built_at_utc": "2026-07-24T09:03:54.063Z",
-  "dataset_version": "SecRegBench v0.20",
-  "release_revision": "v0.20-r10",
+  "schema_version": "0.21.0",
+  "status": "PUBLIC_RELEASE_V3_READY",
+  "built_at_utc": "2026-07-24T15:23:35.942Z",
+  "dataset_version": "SecRegBench v0.21",
+  "release_revision": "v0.21-r1",
   "source_complete_corpus_sha256": "a459ea29ab434679e6c59a65704318376e2a1ca548cf0d43e89d4df791cd5bdc",
   "public_corpus_sha256": "dc6ec37506c8baa26d23cf55a78a7a23f67f5d04c284233389b00cc340c5d878",
   "scientific_projection_sha256": "7250d41e5a460d7e8d7ba800d4dd38957153205dcb70731f0d91b1be529fc614",
@@ -159,8 +159,8 @@
     },
     {
       "path": "code/scripts/score_provisional_evaluation_v012.py",
-      "bytes": 23462,
-      "sha256": "1e4937f08e043a2d6cdebb9a008c4573c441cd9e7fd716c342f332a05765eb8a"
+      "bytes": 23842,
+      "sha256": "b206e2db010a4f26bcac0ce3248adcc9185aa926855e4741b28d887fee15f509"
     },
     {
       "path": "code/src/secregbench/__init__.py",
@@ -188,14 +188,24 @@
       "sha256": "dc457101b3f4208fb0a16da70742ad8c7e16c4495f7f3443067ed45e48d18424"
     },
     {
+      "path": "code/tests/test_expert_adjudication_public_v021.py",
+      "bytes": 1096,
+      "sha256": "eda7f7b1d67e22305e5c4f0ed9c80ba835cc36be22921c906fb45efb4f7cc56a"
+    },
+    {
       "path": "code/tests/test_scoring_public_v016.py",
-      "bytes": 1290,
-      "sha256": "7b6961b239c0c67707cdb53b9eab78c6f7db3b1a684cb6dc03b534c903a1f68b"
+      "bytes": 2349,
+      "sha256": "37241233ed8e139cebb53c52830d379021423837e2029188f2d7fd913f1cc83e"
     },
     {
       "path": "code/tests/test_synthetic_privacy_public_v016.py",
       "bytes": 930,
       "sha256": "12e08156a16372a76643733271296f389668afac54eaadf8f8c195c040358996"
+    },
+    {
+      "path": "code/verify_expert_adjudication_v021.py",
+      "bytes": 8495,
+      "sha256": "f32d5126b5857f2371d3a7084765131bf474f3bd1b4acef1a2d44df8afd3cdc6"
     },
     {
       "path": "code/verify_human_validation_v020.py",
@@ -204,8 +214,8 @@
     },
     {
       "path": "code/verify_public_artifact_v020.py",
-      "bytes": 20532,
-      "sha256": "930318aaecd9405cf06702df1c8d90ed2102eaca913579d5a3b13ae352cb8eab"
+      "bytes": 21775,
+      "sha256": "a938205bd2e17aca69e3effc6120f137f70612bf19d7f63a7cd38754a1004c8a"
     },
     {
       "path": "data/graph/lexical_edges_v014.jsonl",
@@ -244,8 +254,13 @@
     },
     {
       "path": "docs/DATA_CARD.md",
-      "bytes": 6138,
-      "sha256": "c5eee312a1fd74c7990521a271de388a1815ce2a47229de9a1de1d9de0ecff00"
+      "bytes": 7428,
+      "sha256": "f984dbc5d29c318800ccb9e3f08fb6007b688bb18a96f94badb58af878d2e8d3"
+    },
+    {
+      "path": "docs/EXPERT_ADJUDICATION_PROTOCOL.md",
+      "bytes": 3164,
+      "sha256": "b249e4587ea8222bf062fb1419adc22cd339396c509bf32b815f4a6672408fa3"
     },
     {
       "path": "docs/GENERATION_AND_LABEL_DISCLOSURE.md",
@@ -259,13 +274,13 @@
     },
     {
       "path": "docs/PRACTITIONER_VALIDATION_DISCLOSURE.md",
-      "bytes": 1248,
-      "sha256": "8709bff8eca984f04366796698698e91ccfb50a106e8dad8066b88e5ff73e151"
+      "bytes": 2402,
+      "sha256": "e582d8f35bc31edc321562d114f3bea7f025629391626f0f1edacd4fee3a101f"
     },
     {
       "path": "docs/RELEASE_NOTES.md",
-      "bytes": 2336,
-      "sha256": "db4b89ccd96947e1cc64fe7ad809b5a298f4b6e664037d420f8afc40a86450ea"
+      "bytes": 3449,
+      "sha256": "d0fb54b1444710029230054dec26cbf6f98565688b9c6ae1de94594c90806430"
     },
     {
       "path": "evaluation/EVALUATION_INPUT_PROJECTION_V020.json",
@@ -279,8 +294,8 @@
     },
     {
       "path": "evaluation/README.md",
-      "bytes": 2412,
-      "sha256": "34f6990ef07020af9ff0a60a207031387cc1d192ef9f6db70060f2e5e6d4cd26"
+      "bytes": 3374,
+      "sha256": "3fb0d8153ae6d8bdbf29991dd4a65b9c29f133437324c347e3239f476d6741fe"
     },
     {
       "path": "evaluation/system_prompt_zh_v020.txt",
@@ -319,8 +334,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 3857,
-      "sha256": "9dfb9405f1868b2ead8b53cd3dfbd1acd4fb128de383311a4bf0bdef459d9096"
+      "bytes": 4162,
+      "sha256": "f6b64d93f43a4fb4eaaf744ac52e32105d2b86ae7125712fe60faf8624830536"
     },
     {
       "path": "scores/corrected/family_diagnostics_corrected.tex",
@@ -359,8 +374,8 @@
     },
     {
       "path": "scores/keyword_baseline/report.json",
-      "bytes": 869,
-      "sha256": "12a0c83edea8ffe32c1ada279ccfd37e82c88d9dceccd55beb53495e4945d5b5"
+      "bytes": 1062,
+      "sha256": "d4ce302681d615216b18afcb6b6f46ab330b9a8658dbab2e6a43b2e492c25162"
     },
     {
       "path": "scores/primary/evaluation_report.json",
@@ -381,6 +396,21 @@
       "path": "scores/secondary/scored_first_generation.jsonl",
       "bytes": 4252199,
       "sha256": "00c6d2c01350f8d8d174efb1947f57ce4bf108fb3731eb7e389a6f2c580f073d"
+    },
+    {
+      "path": "validation/expert_adjudication/expert_adjudicated_reference_v021.jsonl",
+      "bytes": 57900,
+      "sha256": "0ede3ab18ca92321a115d5320f1d7016b72d75bfee57654e7a8f3227acd11988"
+    },
+    {
+      "path": "validation/expert_adjudication/EXPERT_ADJUDICATION_SUMMARY_V021.json",
+      "bytes": 2021,
+      "sha256": "c4a615a04a345ac370084e02a920f87dfd30dec8e48177822b81c829ad135776"
+    },
+    {
+      "path": "validation/expert_adjudication/HELDOUT_RESCORING_V021.json",
+      "bytes": 112100,
+      "sha256": "6126b313f658ec0d4dc0ef7b84cbe0fc43c678cebb9139c0ac5d7d1fd3686a31"
     },
     {
       "path": "validation/human_validation/HUMAN_FLAG_SENSITIVITY_V020.json",
@@ -439,5 +469,23 @@
     "deterministic_compiler_distributed": true,
     "provider_neutral_runner_distributed": true,
     "complete_scorer_distributed": true
+  },
+  "expert_adjudication": {
+    "anonymous_practitioners": 5,
+    "round1_items": 100,
+    "round1_judgments": 500,
+    "stratified_random_items": 50,
+    "challenge_items": 50,
+    "round1_action_fleiss_kappa": 0.851723,
+    "stratified_random_rule_match": 0.9,
+    "round2_items": 34,
+    "round2_judgments": 170,
+    "confirmed_rule_items": 15,
+    "revised_label_items": 10,
+    "unresolved_items": 9,
+    "final_high_confidence_items": 91,
+    "raw_cards_distributed": false,
+    "reviewer_level_data_distributed": false,
+    "saved_predictions_rescored_without_model_rerun": true
   }
 }

@@ -20,7 +20,9 @@
   "heldout_labels_used_for_fit_or_selection": false,
   "hashes": {
     "corpus": "a459ea29ab434679e6c59a65704318376e2a1ca548cf0d43e89d4df791cd5bdc",
+    "public_corpus_projection": "dc6ec37506c8baa26d23cf55a78a7a23f67f5d04c284233389b00cc340c5d878",
     "development_dialogue_keyword_log_odds_model.json": "a43fbd40cc90116a015544a47dac7d0ac01ff8d804a924c60905a5211ce27aee",
-    "development_dialogue_keyword_predictions.jsonl": "ebec23d2f676d392df93c7259802ca5e4827acec07a6b4ae875ac14394392c2e"
+    "development_dialogue_keyword_predictions.jsonl": "ebec23d2f676d392df93c7259802ca5e4827acec07a6b4ae875ac14394392c2e",
+    "predictions.jsonl": "ebec23d2f676d392df93c7259802ca5e4827acec07a6b4ae875ac14394392c2e"
   }
 }

@@ -1,0 +1,55 @@
+{
+  "schema_version": "0.21.0",
+  "status": "PASS_DEIDENTIFIED_EXPERT_ADJUDICATION_PUBLIC_RELEASE",
+  "participant_description": "five anonymous securities compliance practitioners",
+  "design": {
+    "round1_items": 100,
+    "round1_judgments": 500,
+    "stratified_random_items": 50,
+    "challenge_items": 50,
+    "round2_items": 34,
+    "round2_judgments": 170,
+    "round2_disclosed_rule_action_and_public_evidence": true
+  },
+  "round1_independent_validation": {
+    "action_fleiss_kappa_all_100": 0.851723,
+    "action_pairwise_agreement_all_100": 0.893,
+    "action_unanimous_rate_all_100": 0.77,
+    "action_at_least_four_of_five_rate_all_100": 0.94,
+    "rule_primary_match_all_100": 0.77,
+    "rule_primary_match_stratified_random_50": 0.9,
+    "mean_confidence_1_to_5": 4.086
+  },
+  "round2_delphi_adjudication": {
+    "action_fleiss_kappa": 0.648506,
+    "rule_acceptance_fleiss_kappa": 0.740854,
+    "action_unanimous_items": 20,
+    "action_at_least_four_of_five_items": 25,
+    "confirmed_rule_items": 15,
+    "revised_label_items": 10,
+    "unresolved_items": 9,
+    "mean_confidence_1_to_5": 4.1412,
+    "not_an_independent_accuracy_estimate": true
+  },
+  "final_reference": {
+    "items": 100,
+    "high_confidence_items": 91,
+    "unresolved_items": 9,
+    "label_changed_items": 10,
+    "high_confidence_heldout_items": 64,
+    "revised_heldout_items": 9
+  },
+  "privacy": {
+    "raw_answer_cards_distributed": false,
+    "reviewer_level_judgments_distributed": false,
+    "free_text_reasons_distributed": false,
+    "reviewer_slots_distributed": false,
+    "names_employers_contacts_signatures_distributed": false,
+    "aggregate_vote_counts_distributed": true
+  },
+  "source_hashes": {
+    "round1_summary_sha256": "7ce6cccbecea3de7794ccaf01de38dcaf7d7b0a2a7543c346497e2d079282768",
+    "round2_summary_sha256": "9f7c3e156e4bbac974d02c05fabd35cee05b79aa24f60cc98408bd4cbc8ec0e7",
+    "final_reference_private_source_sha256": "1d7f30eb8bc3eead4f64dd00a6fdf615bcb50d81dd01c6c76a9cae2b28959433"
+  }
+}

@@ -1,6 +1,6 @@
-# SecRegBench v0.20 public research artifact
+# SecRegBench v0.21 public research artifact
 
-Status: `PUBLIC_RELEASE_V2_READY`
+Status: `PUBLIC_RELEASE_V3_READY`
 
 SecRegBench is a synthetic Chinese benchmark for deciding whether a
 securities customer-service assistant should `ANSWER`, `CLARIFY`, `REFUSE`, or
@@ -19,6 +19,9 @@ This public package contains:
 - three sanitized 8,000-event model ledgers and scored predictions;
 - deidentified practitioner-validation evidence: 700 judgments over 500
   frozen items, item aggregates, statistical report, and verifier;
+- a deidentified 100-item expert-adjudication overlay with aggregate votes,
+  91 high-confidence references, 10 label revisions, 9 unresolved items, and
+  saved-prediction rescoring without new inference;
 - aggregate construction, repair, scoring, privacy, overlap, and diversity
   reports;
 - the exact evaluation instruction, deterministic request compiler,
@@ -41,12 +44,13 @@ From the extracted package root:
 
 ```bash
 python code/verify_public_artifact_v020.py .
+python code/verify_expert_adjudication_v021.py
 ```
 
 Expected status:
 
 ```text
-PASS_PUBLIC_ARTIFACT_V020
+PASS_PUBLIC_ARTIFACT_V021
 ```
 
 The verifier checks manifest hashes, public-field policy, row cardinalities,
@@ -72,7 +76,7 @@ not distributed. See `docs/GENERATION_AND_LABEL_DISCLOSURE.md`.
   parse status, generation number, error status, and token counts
 - `scores/`: scored rows, reports, baseline, and corrected diagnostics
 - `validation/`: deidentified practitioner judgments, item aggregates, and
-  statistical report
+  statistical report, plus the aggregate-only expert-adjudication overlay
 - `evaluation/`: exact prompt, evidence inputs, and reconstruction guide
 - `audits/`: quality, privacy, overlap, projection-equivalence, and statistics
 - `provenance/`: aggregate generation and repair counts only

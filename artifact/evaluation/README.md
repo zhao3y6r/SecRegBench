@@ -44,10 +44,30 @@ python code/scripts/score_provisional_evaluation_v012.py \
   run_outputs/scored
 ```
 
+To include the frozen development-only keyword baseline in the same report,
+append:
+
+```bash
+  --keyword-baseline-report scores/keyword_baseline/report.json \
+  --keyword-baseline-predictions scores/keyword_baseline/predictions.jsonl
+```
+
+The keyword report records both the frozen author-side corpus hash and the
+verified public-projection corpus hash. The scorer accepts either binding and
+always verifies the supplied prediction file by SHA-256.
+
 The versioned scorer is the complete scorer used for the released results. It
 computes accuracy, macro-F1, unsafe fulfilment, service denial, non-answer
 rates, component-bootstrap intervals, pair comparisons, and trajectory
 diagnostics.
+
+Request reconstruction is exact at the scientific-input level: scenario,
+dialogue, typed state, evidence, method, and model-facing request content.
+The reconstructed job-ledger byte hash can differ from the older private run
+ledger because the public compiler uses a versioned public schema and excludes
+private operational metadata. Scoring equivalence is checked through job
+identifiers, model-input hashes, predictions, and reported metrics rather than
+requiring those two ledger files to be byte-identical.
 
 ## Publication boundary
 

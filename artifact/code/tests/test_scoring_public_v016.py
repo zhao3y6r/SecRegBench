@@ -1,4 +1,6 @@
 import importlib.util
+import hashlib
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -11,6 +13,28 @@ SPEC.loader.exec_module(MODULE)
 
 
 class ScoringPublicTest(unittest.TestCase):
+    def test_keyword_binding_accepts_verified_public_projection(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            corpus = Path(temp_dir) / "corpus.jsonl"
+            corpus.write_text('{"scenario_id":"S1"}\n', encoding="utf-8")
+            digest = hashlib.sha256(corpus.read_bytes()).hexdigest()
+            report = {
+                "hashes": {
+                    "corpus": "0" * 64,
+                    "public_corpus_projection": digest,
+                }
+            }
+            MODULE.validate_keyword_corpus_binding(report, corpus)
+
+    def test_keyword_binding_rejects_unknown_projection(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            corpus = Path(temp_dir) / "corpus.jsonl"
+            corpus.write_text('{"scenario_id":"S1"}\n', encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "not bound to corpus"):
+                MODULE.validate_keyword_corpus_binding(
+                    {"hashes": {"corpus": "0" * 64}}, corpus
+                )
+
     def test_first_generation_is_selected(self):
         events = [
             {"job_id": "J1", "run_generation": 2},

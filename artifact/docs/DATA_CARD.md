@@ -1,4 +1,4 @@
-# SecRegBench v0.20 public data card
+# SecRegBench v0.21 public data card
 
 ## Summary
 
@@ -62,6 +62,16 @@ actions matched the rule-compiled primary action on 77.8%, mean realism was
 0.7--2.9%). The benchmark targets remain rule-compiled operational-policy
 outputs, not legal certification or production approval.
 
+A separate five-practitioner study reviewed the same 100 items in an
+independent first round: 50 stratified random items and 50 challenge items.
+Action Fleiss kappa was 0.852 across all 100, and modal actions matched
+rule-derived labels on 90% of the stratified random half. Thirty-four disputed
+or flagged items entered a Delphi round that disclosed the current rule action
+and public evidence. It confirmed 15 labels, revised 10, and retained 9 as
+unresolved, yielding 91 high-confidence reference items. This adjudication
+overlay is distributed separately and does not silently rewrite the original
+10,000 rule-derived labels.
+
 ## Evaluation evidence
 
 The package includes parsed first-generation events and scored rows for:
@@ -76,6 +86,12 @@ The package includes parsed first-generation events and scored rows for:
 The package also includes 700 deidentified practitioner judgments, 500
 item-level aggregates, the frozen statistical report, and a verifier. No
 practitioner name, employer, or contact information is distributed.
+
+For the 100-item adjudication layer, only aggregate vote counts and final
+statuses are distributed. Raw cards, reviewer-level answers, reviewer slots,
+free-text reasons, names, employers, contacts, signatures, and participation
+documents are excluded. Existing model predictions are rescored under the nine
+high-confidence held-out label revisions; no model is rerun.
 
 Event rows contain parsed actions, usage totals, and non-sensitive run
 metadata. The exact evaluation instruction, evidence inputs, deterministic
@@ -118,6 +134,10 @@ identity, credential, or private infrastructure record is included.
   have a single practitioner judgment.
 - Seven validation items are materially flagged and remain distributed; three
   are in held-out.
+- The expert-adjudication layer contains 91 high-confidence items and 9
+  unresolved items. Its 50 challenge items are not a random population sample.
+- Round-two rule acceptance is not an independent validation estimate because
+  reviewers saw the current rule action and public evidence.
 - State and evidence are supplied as oracle inputs.
 - Public held-out labels permit transparent reproduction but are unsuitable as
   a permanently secret leaderboard.

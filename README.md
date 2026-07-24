@@ -22,6 +22,9 @@ This repository is the public research artifact accompanying:
 - three sanitized 8,000-event model ledgers and 24,000 scored rows;
 - 700 deidentified practitioner judgments over 500 frozen items, with item
   aggregates, a statistical report, and a deterministic verifier;
+- a separate five-practitioner adjudication layer over 100 items: 91
+  high-confidence references, 10 revised rule labels, 9 unresolved items,
+  aggregate vote counts, and saved-prediction rescoring;
 - aggregate construction, privacy, overlap, diversity, and evaluation reports;
 - the exact evaluation system instruction, deterministic request compiler,
   provider-neutral runner, full scorer, tests, documentation, and a verifier.
@@ -43,6 +46,7 @@ From the repository root:
 
 ```bash
 python artifact/code/verify_public_artifact_v020.py artifact
+python artifact/code/verify_expert_adjudication_v021.py
 python -m unittest discover -s artifact/code/tests -p "test_*.py" -v
 ```
 
@@ -68,6 +72,15 @@ mean realism was 4.01/5, and 7 items (1.4%) were marked as materially
 defective. The complete deidentified result is released; it does not make the
 rule-compiled targets legal certification or production approval.
 
+In a separate all-five review of 100 items, the independent first round
+reached Fleiss kappa 0.852; modal practitioner actions matched rule-derived
+labels on 90% of a stratified random 50 and 77% of all 100. A second-round
+Delphi procedure confirmed 15 labels, revised 10, and retained 9 as
+unresolved, producing 91 high-confidence reference items. Round-two rule
+acceptance is adjudication evidence, not an independent accuracy estimate.
+See
+[`artifact/docs/EXPERT_ADJUDICATION_PROTOCOL.md`](artifact/docs/EXPERT_ADJUDICATION_PROTOCOL.md).
+
 The external audit aligns 11 risk-bearing rule atoms, controlling 8,670
 scenarios, with at least one official regulatory-record category. The remaining
 1,330 general-education scenarios use only the 85-item official-page language
@@ -86,6 +99,10 @@ model weight, or named practitioner record. It intentionally includes the
 exact evaluation instruction, evidence inputs, and request-building/evaluation
 code. Per-row generation-engine and internal workflow identifiers have been
 removed.
+
+The expert-adjudication release contains aggregate vote counts only. Raw answer
+cards, reviewer-level answers, free-text reasons, reviewer slots, and
+participation documents are not distributed.
 
 Aggregate use of Qwen, DeepSeek V4, and OpenAI Codex is disclosed in
 [`artifact/docs/GENERATION_AND_LABEL_DISCLOSURE.md`](artifact/docs/GENERATION_AND_LABEL_DISCLOSURE.md).

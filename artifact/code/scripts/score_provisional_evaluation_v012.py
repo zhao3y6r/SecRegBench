@@ -35,6 +35,18 @@ def sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def validate_keyword_corpus_binding(report: dict, corpus_path: Path) -> None:
+    """Accept the frozen author corpus or its verified public projection."""
+    hashes = report.get("hashes", {})
+    allowed = {
+        value
+        for key in ("corpus", "public_corpus_projection")
+        if isinstance((value := hashes.get(key)), str) and value
+    }
+    if sha256(corpus_path) not in allowed:
+        raise ValueError("keyword baseline is not bound to corpus")
+
+
 def read_jsonl(path: Path) -> list[dict[str, Any]]:
     rows = []
     for line_number, line in enumerate(path.read_text(encoding="utf-8").splitlines(), start=1):
@@ -416,8 +428,7 @@ def main() -> int:
         keyword_report = json.loads(args.keyword_baseline_report.read_text(encoding="utf-8"))
         if keyword_report.get("status") != "PASS_FROZEN_DEVELOPMENT_ONLY_KEYWORD_BASELINE_BEFORE_HELDOUT_SCORING":
             raise ValueError("keyword baseline report status is not passing")
-        if keyword_report.get("hashes", {}).get("corpus") != sha256(args.corpus):
-            raise ValueError("keyword baseline is not bound to corpus")
+        validate_keyword_corpus_binding(keyword_report, args.corpus)
         if keyword_report.get("hashes", {}).get(args.keyword_baseline_predictions.name) != sha256(args.keyword_baseline_predictions):
             raise ValueError("keyword prediction hash mismatch")
         keyword_predictions = unique_map(read_jsonl(args.keyword_baseline_predictions), "scenario_id", "keyword prediction")

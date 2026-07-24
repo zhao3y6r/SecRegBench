@@ -214,6 +214,17 @@ def verify_exact_pairs(root: Path) -> None:
             raise ValueError(f"{suite}: exact-pair diagnostic mismatch")
 
 
+def verify_keyword_baseline_binding(root: Path, public_corpus_sha256: str) -> None:
+    report_path = root / "scores/keyword_baseline/report.json"
+    predictions_path = root / "scores/keyword_baseline/predictions.jsonl"
+    report = json.loads(report_path.read_text(encoding="utf-8"))
+    hashes = report.get("hashes", {})
+    if hashes.get("public_corpus_projection") != public_corpus_sha256:
+        raise ValueError("keyword baseline lacks the public-corpus binding")
+    if hashes.get(predictions_path.name) != sha256(predictions_path):
+        raise ValueError("keyword baseline lacks the public prediction binding")
+
+
 def verify_public_policy(root: Path, manifest: dict[str, Any]) -> None:
     prohibited_extensions = (".tar.gz", ".tgz", ".zip", ".7z")
     prohibited_full_tokens = (
@@ -268,7 +279,7 @@ def main() -> int:
     root = args.artifact_root.resolve()
     manifest_path = root / "ARTIFACT_MANIFEST.json"
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
-    if manifest.get("status") != "PUBLIC_RELEASE_V2_READY":
+    if manifest.get("status") != "PUBLIC_RELEASE_V3_READY":
         raise ValueError("unexpected public artifact status")
     if manifest.get("licenses") != {
         "code": "Apache-2.0",
@@ -459,6 +470,7 @@ def main() -> int:
     secondary_events = verify_public_events(root, "secondary")
     deepseek_events = verify_public_events(root, "deepseek")
     verify_exact_pairs(root)
+    verify_keyword_baseline_binding(root, sha256(corpus_path))
     verify_public_policy(root, manifest)
     human_process = subprocess.run(
         [sys.executable, str(root / "code/verify_human_validation_v020.py")],
@@ -473,6 +485,19 @@ def main() -> int:
             + (human_process.stderr or human_process.stdout)
         )
     human_validation = json.loads(human_process.stdout)
+    adjudication_process = subprocess.run(
+        [sys.executable, str(root / "code/verify_expert_adjudication_v021.py")],
+        check=False,
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+    )
+    if adjudication_process.returncode != 0:
+        raise ValueError(
+            "expert-adjudication verification failed: "
+            + (adjudication_process.stderr or adjudication_process.stdout)
+        )
+    expert_adjudication = json.loads(adjudication_process.stdout)
 
     equivalence = json.loads(
         (root / "audits/PUBLIC_PROJECTION_EQUIVALENCE_V016.json").read_text(
@@ -488,7 +513,7 @@ def main() -> int:
         raise ValueError("projection-equivalence report mismatch")
 
     result = {
-        "status": "PASS_PUBLIC_ARTIFACT_V020",
+        "status": "PASS_PUBLIC_ARTIFACT_V021",
         "manifest_sha256": sha256(manifest_path),
         "manifest_files": len(manifest["files"]),
         "public_corpus_sha256": sha256(corpus_path),
@@ -505,6 +530,7 @@ def main() -> int:
         },
         "deepseek_combined": deepseek["state_oracle_evidence"],
         "human_validation": human_validation,
+        "expert_adjudication": expert_adjudication,
         "evaluation_inputs": {
             "system_prompt_sha256": sha256(prompt_path),
             "evidence_inputs_sha256": sha256(evidence_path),

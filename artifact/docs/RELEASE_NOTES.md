@@ -1,6 +1,20 @@
-# SecRegBench public release notes v0.20-r10
+# SecRegBench public release notes v0.21-r1
 
-Status: `PUBLIC_RELEASE_V2_READY`
+Status: `PUBLIC_RELEASE_V3_READY`
+
+This revision adds a deidentified, aggregate-only expert-adjudication overlay
+over 100 scenarios. The independent first round obtains action Fleiss kappa
+0.852 and 90% modal-action match on a stratified random 50. A 34-item Delphi
+round confirms 15 labels, revises 10, and leaves 9 unresolved, producing 91
+high-confidence references.
+
+Nine revised labels occur in held-out. All three model ledgers are rescored
+from saved predictions under this overlay; no model inference, training, or
+API call is repeated. The original 10,000 rule-derived labels remain intact,
+and the expert overlay is versioned separately.
+
+Raw answer cards, reviewer-level judgments, reviewer slots, free-text reasons,
+identities, signatures, and participation documents are excluded.
 
 This revision replaces the stale practitioner projection with the complete
 latest five-practitioner result: 700 judgments over 500 frozen items, 100%
@@ -9,6 +23,12 @@ action agreement on the 50 shared items, 77.8% match to rule-compiled targets,
 exact evaluation system instruction, 48 attributed evidence inputs, a
 deterministic request compiler, a provider-neutral OpenAI-compatible runner,
 the full scorer, and end-to-end verification.
+
+The public keyword-baseline scoring path now binds the frozen baseline report
+to both the author-side corpus and its verified public projection, and exposes
+the public prediction filename used by the scorer. The evaluation guide also
+distinguishes exact scientific-input reconstruction from byte-identical
+reconstruction of an older private job ledger.
 
 No model was retrained or rerun for this revision. A sensitivity analysis
 uses existing predictions and shows that excluding the three flagged held-out
