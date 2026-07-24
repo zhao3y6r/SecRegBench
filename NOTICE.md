@@ -33,7 +33,7 @@ firm, or model provider.
 
 ## Practitioner review
 
-Three practitioners are described only in anonymous aggregate form. Their
-review is not a public item-level adjudication, legal opinion, institutional
-approval, or endorsement.
-
+Five securities compliance practitioners are described anonymously. The
+release includes deidentified item-level choices and aggregate statistics,
+but their review is not a legal opinion, institutional approval, production
+certification, or endorsement.

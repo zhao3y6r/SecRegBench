@@ -12,13 +12,14 @@ This public package contains:
   labels, family/suite membership, realized components, and the fixed
   8,000/2,000 split;
 - source/rule metadata without raw regulatory snapshots or verbatim clauses;
+- a category-level audit of 1,833 public CSRC supervisory or punishment
+  records, with titles, official URLs, dates, hashes, and category evidence;
 - graph and split mappings;
-- two sanitized 8,000-event model ledgers and scored predictions;
+- three sanitized 8,000-event model ledgers and scored predictions;
+- deidentified practitioner-validation evidence: 700 judgments over 500
+  frozen items, item aggregates, statistical report, and verifier;
 - aggregate construction, repair, scoring, privacy, overlap, and diversity
   reports;
-- a fixed external audit of 1,833 official supervisory or punishment records,
-  stored as titles, URLs, dates, hashes, and deterministic category evidence
-  without copied decision text;
 - selected scoring/audit code, tests, documentation, and a self-contained
   verifier.
 
@@ -44,14 +45,15 @@ python code/verify_public_artifact_v016.py .
 Expected status:
 
 ```text
-PASS_PUBLIC_ARTIFACT_V016
+PASS_PUBLIC_ARTIFACT_V017
 ```
 
 The verifier checks manifest hashes, public-field policy, row cardinalities,
 UTF-8 decoding, split/component isolation, action counts, exact
-event/scored-ledger correspondence, selected metrics, and prohibited
-operational markers. It verifies the fixed public artifact; it does not rerun
-model inference or reconstruct private generation infrastructure.
+event/scored-ledger correspondence, selected metrics, the deidentified
+practitioner study, and prohibited operational markers. It verifies the fixed
+public artifact; it does not rerun model inference or reconstruct private
+generation infrastructure.
 
 ## Generative provenance
 
@@ -68,9 +70,9 @@ not distributed. See `docs/GENERATION_AND_LABEL_DISCLOSURE.md`.
 - `events/`: parsed event ledgers containing only job ID, parsed action,
   parse status, generation number, error status, and token counts
 - `scores/`: scored rows, reports, baseline, and corrected diagnostics
-- `audits/`: quality, privacy, overlap, projection-equivalence, statistics,
-  and the external public regulatory-record category audit; run its rebuild
-  script from the repository root
+- `validation/`: deidentified practitioner judgments, item aggregates, and
+  statistical report
+- `audits/`: quality, privacy, overlap, projection-equivalence, and statistics
 - `provenance/`: aggregate generation and repair counts only
 - `code/`: selected analysis/scoring code, tests, and verifier
 - `docs/`: data card, governance, practitioner scope, licenses, and disclosure

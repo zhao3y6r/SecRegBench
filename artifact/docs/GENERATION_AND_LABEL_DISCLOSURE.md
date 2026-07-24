@@ -26,7 +26,8 @@ parsed evaluation events, and hashes. It excludes per-row engine markers,
 internal task/review identifiers, request payloads, raw responses, endpoints,
 serving logs, and private candidate/failure ledgers.
 
-Three anonymous securities-compliance practitioners reviewed the benchmark
-design, regulatory interpretations, label logic, and corpus examples. Their
-review is not represented as item-level annotation, inter-annotator agreement,
-legal certification, or production approval.
+Five anonymous securities compliance practitioners completed the released
+500-item validation study. Its high realism result, zero marked material
+scenario defects, and low action agreement are reported together. The study
+does not convert rule-compiled targets into expert gold, legal certification,
+or production approval.

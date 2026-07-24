@@ -1,0 +1,24 @@
+{
+  "schema_version": "0.17.0",
+  "status": "PASS_DEEPSEEK_PUBLIC_PROJECTION_SECRET_FREE",
+  "events": 8000,
+  "scored_rows": 8000,
+  "source_event_sha256": "8c5845890da8e0b2403465943712a65f9911d98877d3b25c6e274527be22e500",
+  "public_event_sha256": "f683c9abf0301e20e6caa5950e08073e401f15fb588d4974bf5ae57df1eed616",
+  "scored_rows_sha256": "4983a7e6b28642ee22636b2e73448bef9e61dbb2581ae26676ed4eb24303bfd1",
+  "evaluation_report_sha256": "a5c43ee299349b6c458b8daa3a91c1c8e4eb922fac937cb5332f93e54e52d28e",
+  "excluded_fields": [
+    "credential_env",
+    "base_request_sha256",
+    "deepseek_request_sha256",
+    "response_sha256",
+    "response_content",
+    "response_headers",
+    "latency_seconds",
+    "response_model_id",
+    "scenario_id",
+    "method"
+  ],
+  "raw_request_or_response_distributed": false,
+  "endpoint_or_credential_distributed": false
+}

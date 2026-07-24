@@ -8,6 +8,8 @@ import hashlib
 import json
 import math
 import re
+import subprocess
+import sys
 from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any
@@ -225,6 +227,7 @@ def verify_public_policy(root: Path, manifest: dict[str, Any]) -> None:
     exceptions = {
         "code/verify_public_artifact_v016.py",
         "docs/RELEASE_NOTES.md",
+        "audits/DEEPSEEK_PUBLIC_PROJECTION_V017.json",
     }
     flagged: list[str] = []
     for item in manifest["files"]:
@@ -326,7 +329,7 @@ def main() -> int:
         "prompt",
         "".join(("chat", "_completions", "_url")),
     }
-    for model in ("primary", "secondary"):
+    for model in ("primary", "secondary", "deepseek"):
         events = read_jsonl(root / f"events/{model}_first_generation.jsonl")
         if len(events) != 8000 or len({row["job_id"] for row in events}) != 8000:
             raise ValueError(f"{model}: event cardinality/uniqueness mismatch")
@@ -335,10 +338,25 @@ def main() -> int:
 
     primary = verify_scoring(root, "primary")
     secondary = verify_scoring(root, "secondary")
+    deepseek = verify_scoring(root, "deepseek")
     primary_events = verify_public_events(root, "primary")
     secondary_events = verify_public_events(root, "secondary")
+    deepseek_events = verify_public_events(root, "deepseek")
     verify_exact_pairs(root)
     verify_public_policy(root, manifest)
+    human_process = subprocess.run(
+        [sys.executable, str(root / "code/verify_human_validation_v017.py")],
+        check=False,
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+    )
+    if human_process.returncode != 0:
+        raise ValueError(
+            "human-validation verification failed: "
+            + (human_process.stderr or human_process.stdout)
+        )
+    human_validation = json.loads(human_process.stdout)
 
     equivalence = json.loads(
         (root / "audits/PUBLIC_PROJECTION_EQUIVALENCE_V016.json").read_text(
@@ -354,7 +372,7 @@ def main() -> int:
         raise ValueError("projection-equivalence report mismatch")
 
     result = {
-        "status": "PASS_PUBLIC_ARTIFACT_V016",
+        "status": "PASS_PUBLIC_ARTIFACT_V017",
         "manifest_sha256": sha256(manifest_path),
         "manifest_files": len(manifest["files"]),
         "public_corpus_sha256": sha256(corpus_path),
@@ -367,7 +385,10 @@ def main() -> int:
         "sanitized_event_ledgers": {
             "primary": primary_events,
             "secondary": secondary_events,
+            "deepseek": deepseek_events,
         },
+        "deepseek_combined": deepseek["state_oracle_evidence"],
+        "human_validation": human_validation,
         "raw_model_io_distributed": False,
         "private_infrastructure_distributed": False,
         "upload_performed": False,

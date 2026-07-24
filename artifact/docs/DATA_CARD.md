@@ -53,11 +53,16 @@ families; 34 candidates covering 72 rows were selected by frozen structural
 and lexical criteria. The public artifact records these facts in aggregate,
 without per-row engine or internal request identifiers.
 
-Three anonymous securities-compliance practitioners reviewed benchmark design,
-regulatory interpretations, action-label logic, and corpus examples and
-reported no material label defect requiring correction. This was not public
-item-level adjudication, inter-annotator agreement, legal certification, or
-production approval.
+Five anonymous securities compliance practitioners reviewed 500 frozen items.
+Fifty common items received five judgments each and 450 additional items
+received one judgment each, for 700 judgments. Mean realism was 4.69/5 and no
+item was marked as having a material scenario defect (0/500; Wilson 95% CI
+0.0--0.8%). Shared-item action pairwise agreement was 36.0% (Fleiss kappa
+0.063), and aggregate actions matched the rule-compiled primary action on
+36.0% of items. The action result does not validate a unique human-consensus
+label; it exposes sensitivity to reviewer policy and the compressed action
+rubric. The benchmark targets remain rule-compiled operational-policy outputs,
+not expert gold, legal certification, or production approval.
 
 ## Evaluation evidence
 
@@ -65,9 +70,14 @@ The package includes parsed first-generation events and scored rows for:
 
 - Qwen3.5-35B-A3B-GPTQ-Int4: 8,000 predictions;
 - Qwen2.5-7B-Instruct: 8,000 predictions;
+- the served `deepseek-v4-flash` identifier: 8,000 predictions;
 - four information views over the same 2,000 held-out scenarios;
 - a development-only keyword log-odds baseline; and
 - 10,000-draw component-bootstrap reports over 59 held-out components.
+
+The package also includes 700 deidentified practitioner judgments, 500
+item-level aggregates, the frozen statistical report, and a verifier. No
+practitioner name, employer, or contact information is distributed.
 
 Event rows contain hashes, parsed actions, usage totals, and non-sensitive run
 metadata. Exact prompts, request payloads, raw responses, endpoints, and model
@@ -101,8 +111,11 @@ identity, credential, or private infrastructure record is included.
 - The 457 benign held-out rows occupy five components and 23 authoring blocks.
 - The rules cover a designed slice of public mainland-China securities
   materials rather than comprehensive law.
-- Both evaluated checkpoints are Qwen models; the primary checkpoint generated
-  much of the surface text.
+- Evaluation covers three checkpoint identities from two model families
+  (Qwen and DeepSeek); the primary Qwen checkpoint generated much of the
+  surface text.
+- Practitioner action agreement is low, so target scores measure conformance to
+  the published rule policy rather than human consensus.
 - State and evidence are supplied as oracle inputs.
 - Public held-out labels permit transparent reproduction but are unsuitable as
   a permanently secret leaderboard.

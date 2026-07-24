@@ -1,11 +1,18 @@
-# SecRegBench public release notes v0.17-r1
+# SecRegBench public release notes v0.17-r9
 
 Status: `PUBLIC_RELEASE_V1_READY`
 
+This revision preserves the public category-level audit of 1,833 official
+CSRC supervisory or punishment records and adds the complete secret-free
+DeepSeek 8,000-job evaluation projection and the deidentified
+five-practitioner study: 700 judgments over 500 frozen items, 500 item
+aggregates, the statistical report, and a deterministic verifier. The full
+result is retained, including 36.0% shared-item action agreement and 36.0%
+match to rule-compiled targets; labels are not presented as expert gold or
+legal certification.
+
 This package is a public projection of the frozen author-side v0.14 artifact.
-The v0.17-r1 update adds a public regulatory-record category audit and its
-rebuild script. No scenario, split, label, model prediction, or score changed,
-and no model was retrained or rerun.
+It changes distribution metadata only; no model was retrained or rerun.
 
 ## Integrity
 
@@ -35,8 +42,6 @@ and no model was retrained or rerun.
   component assignment, and split;
 - parsed first-generation events and scored predictions;
 - graph/split mappings, aggregate reports, audits, code, tests, and licenses;
-- 1,833 official supervisory or punishment record references with fixed
-  retrieval/category evidence and no copied decision text;
 - aggregate, honest disclosure of Qwen and DeepSeek participation.
 
 The public artifact is intentionally suitable for result verification rather

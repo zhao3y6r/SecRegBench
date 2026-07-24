@@ -745,8 +745,8 @@ def main() -> int:
         "For each pair, fill `semantic_equivalence`, `leakage_link_required`, "
         "`confidence`, and optional `notes`. `leakage_link_required` means the pair is "
         "similar enough that placing the two records in different evaluation splits "
-        "would create a credible near-duplicate leakage risk. Three anonymous reviewer "
-        "ledgers, if actually completed, remain private and are aggregated separately.\n",
+        "would create a credible near-duplicate leakage risk. Reviewer ledgers, if "
+        "actually completed, remain private and are aggregated separately.\n",
         encoding="utf-8",
         newline="\n",
     )

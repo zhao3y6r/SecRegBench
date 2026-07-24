@@ -18,7 +18,9 @@ This repository is the public research artifact accompanying:
 - a fixed category-level audit of 1,833 official CSRC supervisory or
   punishment records, plus the existing 85-item official investor-question
   language proxy;
-- two sanitized 8,000-event model ledgers and 16,000 scored rows;
+- three sanitized 8,000-event model ledgers and 24,000 scored rows;
+- 700 deidentified practitioner judgments over 500 frozen items, with item
+  aggregates, a statistical report, and a deterministic verifier;
 - aggregate construction, privacy, overlap, diversity, and evaluation reports;
 - selected scoring and audit code, tests, documentation, and a verifier.
 
@@ -29,10 +31,10 @@ SHA-256 is:
 dc6ec37506c8baa26d23cf55a78a7a23f67f5d04c284233389b00cc340c5d878
 ```
 
-The original release ZIP has SHA-256:
+The `v0.17-r9` artifact manifest has SHA-256:
 
 ```text
-efb4a3f10de734632b727b5d76a136668a05c901f6b428e78bbce6763cd061b8
+2484ccb08c31b4275481bbed9fe80f0f331db6f854e9ccb92e30842d894454f2
 ```
 
 ## Verify
@@ -45,8 +47,9 @@ python -m unittest discover -s artifact/code/tests -p "test_*.py" -v
 ```
 
 The verifier checks hashes, row counts, field whitelists, split isolation,
-event/scored-row correspondence, selected metrics, and prohibited operational
-metadata. It does not rerun model inference.
+three-model event/scored-row correspondence, selected metrics, the
+deidentified practitioner study, and prohibited operational metadata. It does
+not rerun model inference.
 
 ## Data origin
 
@@ -57,11 +60,13 @@ rules. The repository distributes source titles, issuers, dates, article
 locators, and official URLs. It does **not** redistribute raw regulatory
 snapshots, full source documents, or verbatim clause collections.
 
-Three anonymous securities-industry reviewers familiar with production
-customer-service records across multiple brokerages reviewed the design, rule
-interpretations, label logic, and corpus examples. This establishes a
-practitioner realism check, not that production conversations are included in
-the public corpus.
+Five anonymous securities compliance practitioners reviewed 500 frozen items:
+50 received five-way review and 450 one review each, yielding 700 judgments.
+Mean realism was 4.69/5 and no item was marked as having a material scenario
+defect. Shared-item action agreement was 36.0% (Fleiss kappa 0.063), and
+aggregate actions matched the rule-compiled target on 36.0%. This supports a
+surface-realism check while exposing policy/rubric disagreement; it does not
+make the rule-compiled targets expert gold or legal certification.
 
 The external audit aligns 11 risk-bearing rule atoms, controlling 8,670
 scenarios, with at least one official regulatory-record category. The remaining
