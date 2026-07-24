@@ -1,7 +1,7 @@
 {
   "schema_version": "0.17.0",
   "status": "PUBLIC_RELEASE_V1_READY",
-  "built_at_utc": "2026-07-24T07:33:43.639Z",
+  "built_at_utc": "2026-07-24T07:35:10.172Z",
   "dataset_version": "SecRegBench v0.17",
   "release_revision": "v0.17-r9",
   "source_complete_corpus_sha256": "a459ea29ab434679e6c59a65704318376e2a1ca548cf0d43e89d4df791cd5bdc",
@@ -103,21 +103,6 @@
       "sha256": "4ba04bb4f0c295bfe67f13caabf53c5b831e8e428b8ebf751028f1d94e37b5f5"
     },
     {
-      "path": "code/scripts/__pycache__/audit_regulatory_text_overlap_v013.cpython-312.pyc",
-      "bytes": 6979,
-      "sha256": "3d513c82007ffdd80a8613027ce3f875137258e52854ae6423a325b0ab5bd3a0"
-    },
-    {
-      "path": "code/scripts/__pycache__/audit_synthetic_privacy_v014.cpython-312.pyc",
-      "bytes": 7151,
-      "sha256": "8351c03f76cd7486d291fb15c1d5d7749af30352bc498176a4b83bd8c8777211"
-    },
-    {
-      "path": "code/scripts/__pycache__/score_provisional_evaluation_v012.cpython-312.pyc",
-      "bytes": 29474,
-      "sha256": "d4b16c334d4905f571f7e48c923a8f399d220fe6d52e086188d1a31764fb2d89"
-    },
-    {
       "path": "code/scripts/analyze_action_risk_diagnostics_v014.py",
       "bytes": 19618,
       "sha256": "7a5907c31ed09e8608872231903a561b852e1cc99321cbcc1b6be7db3a1ddbe3"
@@ -181,21 +166,6 @@
       "path": "code/src/secregbench/views.py",
       "bytes": 5197,
       "sha256": "e5bcce7e6e021ede5fd01dad13d58c7c029d02dc2d1a4985daca890b3c6ef597"
-    },
-    {
-      "path": "code/tests/__pycache__/test_audit_regulatory_text_overlap_v013.cpython-312.pyc",
-      "bytes": 2057,
-      "sha256": "cebae757eeec841a0bc09666fab11ec0755d2e5e10b03f39b9802a38a7596b20"
-    },
-    {
-      "path": "code/tests/__pycache__/test_scoring_public_v016.cpython-312.pyc",
-      "bytes": 2555,
-      "sha256": "b86a2490d92b96d9ea022f762d36981f8d47bcab429ac5c28f7d07e197f69e56"
-    },
-    {
-      "path": "code/tests/__pycache__/test_synthetic_privacy_public_v016.cpython-312.pyc",
-      "bytes": 2285,
-      "sha256": "b3a6f57c568428398e97c99f9c3cf0b9497aa9218313aeb2f0d3cd3f344c5648"
     },
     {
       "path": "code/tests/test_audit_regulatory_text_overlap_v013.py",
